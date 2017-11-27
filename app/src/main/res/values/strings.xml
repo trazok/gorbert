@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">RisingSun</string>
+    <string name="app_name">House of the Rising Sun</string>
+    <string name="espresso_shots_label">Espresso Shots</string>
+    <string name="caramel_shots_label">Caramel</string>
+    <string name="chocolate_shots_label">Chocolate</string>
+    <string name="hazelnut_shots_label">Hazelnut</string>
+    <string name="vanilla_shots_label">Vanilla</string>
+    <string name="whipped_cream_label">Whipped Cream</string>
 </resources>
