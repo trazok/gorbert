@@ -1,4 +1,6 @@
 <resources>
+    <string name="coffee_title_label">Title</string>
+    <string name="coffee_description_label">Description</string>
     <string name="app_name">House of the Rising Sun</string>
     <string name="espresso_shots_label">Espresso Shots</string>
     <string name="caramel_shots_label">Caramel</string>
