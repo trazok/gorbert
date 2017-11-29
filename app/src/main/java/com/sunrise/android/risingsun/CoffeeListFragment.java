@@ -13,6 +13,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.sunrise.android.risingsun.beverage.Coffee;
+
 import java.util.List;
 
 /**
@@ -81,7 +83,7 @@ public class CoffeeListFragment extends Fragment
         @Override
         public void onClick(View view)
         {
-            Intent intent = new Intent(getActivity(), CoffeeActivity.class);
+            Intent intent = CoffeeActivity.newIntent(getActivity(), mCoffee.getId());
             startActivity(intent);
         }
     }

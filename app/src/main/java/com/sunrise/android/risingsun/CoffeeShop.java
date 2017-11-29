@@ -2,6 +2,8 @@ package com.sunrise.android.risingsun;
 
 import android.content.Context;
 
+import com.sunrise.android.risingsun.beverage.*;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -33,7 +35,7 @@ public class CoffeeShop
 
         for(int i = 0; i < 20; i++)
         {
-            Coffee coffee = new Coffee(i % 2);
+            Coffee coffee = new ColumbianBlend(i % 2);
             coffee.setTitle("Coffee #" + i);
             coffee.setFavorited(i % 2 == 0);
 
