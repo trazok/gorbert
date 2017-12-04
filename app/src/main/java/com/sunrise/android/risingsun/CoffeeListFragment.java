@@ -83,7 +83,7 @@ public class CoffeeListFragment extends Fragment
         @Override
         public void onClick(View view)
         {
-            Intent intent = CoffeeActivity.newIntent(getActivity(), mCoffee.getId());
+            Intent intent = CoffeePagerActivity.newIntent(getActivity(), mCoffee.getId());
             startActivity(intent);
         }
     }

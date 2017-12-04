@@ -25,6 +25,8 @@ import java.util.UUID;
 
 public class CoffeeFragment extends Fragment
 {
+    private static final String ARG_COFFEE_ID = "coffee_id";
+
     private Coffee mCoffee;
     private TextView mTitleField;
     private TextView mDescriptionField;
@@ -33,14 +35,25 @@ public class CoffeeFragment extends Fragment
     private Spinner mCaramelSpinner;
     private Spinner mChocolateSpinner;
 
+    public static CoffeeFragment newInstance(UUID coffeeId)
+    {
+        Bundle args = new Bundle();
+        args.putSerializable(ARG_COFFEE_ID, coffeeId);
+
+        CoffeeFragment fragment = new CoffeeFragment();
+
+        fragment.setArguments(args);
+        return fragment;
+    }
+
 
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        UUID coffeeId = (UUID) getActivity().getIntent()
-                .getSerializableExtra(CoffeeActivity.EXTRA_COFFEE_ID);
+        UUID coffeeId = (UUID) getArguments().getSerializable(ARG_COFFEE_ID);
+
         mCoffee = CoffeeShop.get(getActivity()).getCoffee(coffeeId);
     }
 

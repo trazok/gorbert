@@ -8,12 +8,15 @@
     <string name="hazelnut_shots_label">Hazelnut Shots</string>
     <string name="vanilla_shots_label">Vanilla Shots</string>
     <string name="whipped_cream_label">Whipped Cream</string>
-    <string name="order_button_label">Place Order</string>
+    <string name="order_button_label">Add to Cart</string>
     <string name="large_radio_label">20oz</string>
     <string name="small_radio_label">16oz</string>
     <string name="almond_milk_checkbox_label">Almond Milk</string>
+    <string name="shot_spinner_prompt">Select number of shots</string>
+
 
     <string-array name="shot_count_list">
+        <item>0</item>
         <item>1</item>
         <item>2</item>
         <item>3</item>
