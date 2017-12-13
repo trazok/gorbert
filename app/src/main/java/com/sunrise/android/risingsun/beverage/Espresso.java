@@ -2,15 +2,17 @@ package com.sunrise.android.risingsun.beverage;
 public class Espresso extends CondimentDecorator
 {
     private static final double PRICE = .70;
+    private int shots;
 
-    public Espresso(Coffee beverage)
+    public Espresso(Coffee beverage, int shots)
     {
         super(beverage);
+        this.shots = shots;
     }
 
     public String getOrder()
     {
-        return wrappedBeverage.getOrder() + ", espresso";
+        return wrappedBeverage.getOrder() + ", " + shots + "x espresso";
     }
 
     public double cost()

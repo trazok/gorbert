@@ -34,6 +34,11 @@ public class ShoppingCart
         order.remove(coffee);
     }
 
+    public List<Coffee> getOrder()
+    {
+        return order;
+    }
+
     public double total()
     {
         double total = 0;

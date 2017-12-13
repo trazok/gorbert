@@ -6,7 +6,7 @@ import java.util.UUID;
  * Created by dell on 11/26/2017.
  */
 
-public abstract class Coffee
+public class Coffee
 {
 
     public static final int SMALL = 1;
@@ -23,7 +23,12 @@ public abstract class Coffee
 
     public Coffee()
     {
-        mId = UUID.randomUUID();
+        this(UUID.randomUUID());
+    }
+
+    public Coffee(UUID id)
+    {
+        mId = id;
     }
 
     public void setTitle(String title)
@@ -56,7 +61,7 @@ public abstract class Coffee
         return mOrder;
     }
 
-    public abstract double cost();
+    public double cost() {return 0;}
 
     public boolean isFavorited()
     {

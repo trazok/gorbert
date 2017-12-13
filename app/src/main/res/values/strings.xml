@@ -14,6 +14,12 @@
     <string name="almond_milk_checkbox_label">Almond Milk</string>
     <string name="shot_spinner_prompt">Select number of shots</string>
 
+    <string name="shopping_cart">Shopping Cart</string>
+    <string name="show_subtitle">Show Subtitle</string>
+    <string name="hide_subtitle">Hide Subtitle</string>
+    <string name="subtitle_format">%1$d coffees</string>
+    <string name="item_added">Placed in cart!</string>
+
 
     <string-array name="shot_count_list">
         <item>0</item>

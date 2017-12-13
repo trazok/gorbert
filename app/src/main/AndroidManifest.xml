@@ -15,8 +15,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CoffeePagerActivity">
-
+        <activity
+            android:name=".CoffeePagerActivity"
+            android:parentActivityName=".CoffeeListActivity">
         </activity>
     </application>
 

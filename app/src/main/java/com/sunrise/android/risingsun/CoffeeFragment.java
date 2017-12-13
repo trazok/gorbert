@@ -6,14 +6,25 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.sunrise.android.risingsun.beverage.AlmondMilk;
+import com.sunrise.android.risingsun.beverage.CaramelShot;
+import com.sunrise.android.risingsun.beverage.ChocolateShot;
 import com.sunrise.android.risingsun.beverage.Coffee;
+import com.sunrise.android.risingsun.beverage.Espresso;
+import com.sunrise.android.risingsun.beverage.HazelnutShot;
+import com.sunrise.android.risingsun.beverage.VanillaShot;
+import com.sunrise.android.risingsun.beverage.WhippedCream;
 
 import org.w3c.dom.Text;
 
@@ -31,9 +42,21 @@ public class CoffeeFragment extends Fragment
     private TextView mTitleField;
     private TextView mDescriptionField;
     private CheckBox mWhippedCheckBox;
+    private CheckBox mAlmondMilkCheckBox;
     private Spinner mEspressoSpinner;
     private Spinner mCaramelSpinner;
     private Spinner mChocolateSpinner;
+    private Spinner mHazelnutSpinner;
+    private Spinner mVanillaSpinner;
+    private Button mAddToCart;
+    private RadioGroup mSizeRadio;
+
+    ShoppingCart mCart = ShoppingCart.getInstance();
+
+    private int shotCount;
+
+
+
 
     public static CoffeeFragment newInstance(UUID coffeeId)
     {
@@ -57,6 +80,15 @@ public class CoffeeFragment extends Fragment
         mCoffee = CoffeeShop.get(getActivity()).getCoffee(coffeeId);
     }
 
+    @Override
+    public void onPause()
+    {
+        super.onPause();
+
+        CoffeeShop.get(getActivity())
+                .updateCoffee(mCoffee);
+    }
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
@@ -68,19 +100,69 @@ public class CoffeeFragment extends Fragment
         mTitleField.setText(mCoffee.getTitle());
         mDescriptionField.setText(mCoffee.getDescription());
 
+        mSizeRadio = (RadioGroup) v.findViewById(R.id.size_radio_group);
+
         mWhippedCheckBox = (CheckBox) v.findViewById(R.id.coffee_whipped);
-        mWhippedCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
-        {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked)
-            {
-                //add whipped function;
-            }
-        });
+        mAlmondMilkCheckBox = (CheckBox) v.findViewById(R.id.almond_milk_checkbox);
 
         mEspressoSpinner = (Spinner) v.findViewById(R.id.espresso_shots_spinner);
 
 
+        mCaramelSpinner = (Spinner) v.findViewById(R.id.caramel_shots_spinner);
+        mHazelnutSpinner = (Spinner) v.findViewById(R.id.hazelnut_shots_spinner);
+        mChocolateSpinner = (Spinner) v.findViewById(R.id.chocolate_shots_spinner);
+        mVanillaSpinner = (Spinner) v.findViewById(R.id.vanilla_shots_spinner);
+
+        mAddToCart = (Button) v.findViewById(R.id.order_button);
+        mAddToCart.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                //add radio size code
+                if (mAlmondMilkCheckBox.isChecked())
+                {
+                    mCoffee = new AlmondMilk(mCoffee);
+                }
+
+                if (mEspressoSpinner.getSelectedItemPosition() > 0)
+                {
+                    mCoffee = new Espresso(mCoffee, mEspressoSpinner.getSelectedItemPosition());
+                }
+
+                if (mCaramelSpinner.getSelectedItemPosition() > 0)
+                {
+                    mCoffee = new CaramelShot(mCoffee, mCaramelSpinner.getSelectedItemPosition());
+                }
+
+                if (mChocolateSpinner.getSelectedItemPosition() > 0)
+                {
+                    mCoffee = new ChocolateShot(mCoffee, mChocolateSpinner.getSelectedItemPosition());
+                }
+
+                if (mHazelnutSpinner.getSelectedItemPosition() > 0)
+                {
+                    mCoffee = new HazelnutShot(mCoffee, mHazelnutSpinner.getSelectedItemPosition());
+                }
+
+                if (mVanillaSpinner.getSelectedItemPosition() > 0)
+                {
+                    mCoffee = new VanillaShot(mCoffee, mVanillaSpinner.getSelectedItemPosition());
+                }
+
+                if (mWhippedCheckBox.isChecked())
+                {
+                    mCoffee = new WhippedCream(mCoffee);
+                }
+
+                mCart.add(mCoffee);
+                Toast.makeText(getActivity(), R.string.item_added, Toast.LENGTH_SHORT);
+            }
+        });
+
         return v;
     }
+
+
+
 }

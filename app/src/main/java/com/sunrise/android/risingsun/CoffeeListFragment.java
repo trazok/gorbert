@@ -7,6 +7,8 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -27,6 +29,13 @@ public class CoffeeListFragment extends Fragment
     private RecyclerView mCoffeeRecyclerView;
     private CoffeeAdapter mAdapter;
 
+    @Override
+    public void onCreate(Bundle savedInstanceState)
+    {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
+    }
+
 
     @Nullable
     @Override
@@ -43,13 +52,35 @@ public class CoffeeListFragment extends Fragment
         return view;
     }
 
+    @Override
+    public void onResume()
+    {
+        super.onResume();
+        updateUI();
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater)
+    {
+        super.onCreateOptionsMenu(menu, inflater);
+        inflater.inflate(R.menu.fragment_coffee_list, menu);
+    }
+
     private void updateUI()
     {
         CoffeeShop coffeeShop = CoffeeShop.get(getActivity());
         List<Coffee> coffees = coffeeShop.getCoffees();
 
-        mAdapter = new CoffeeAdapter(coffees);
-        mCoffeeRecyclerView.setAdapter(mAdapter);
+        if (mAdapter == null)
+        {
+            mAdapter = new CoffeeAdapter(coffees);
+            mCoffeeRecyclerView.setAdapter(mAdapter);
+        }
+        else
+        {
+            mAdapter.setCoffees(coffees);
+            mAdapter.notifyDataSetChanged();
+        }
 
     }
 
@@ -117,6 +148,11 @@ public class CoffeeListFragment extends Fragment
         public int getItemCount()
         {
             return mCoffees.size();
+        }
+
+        public void setCoffees(List<Coffee> coffees)
+        {
+            mCoffees = coffees;
         }
     }
 }

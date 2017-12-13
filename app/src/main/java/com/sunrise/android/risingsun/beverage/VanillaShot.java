@@ -2,15 +2,17 @@ package com.sunrise.android.risingsun.beverage;
 public class VanillaShot extends CondimentDecorator
 {
     private static final double PRICE = .50;
+    private int shots;
 
-    public VanillaShot(Coffee beverage)
+    public VanillaShot(Coffee beverage, int shots)
     {
         super(beverage);
+        this.shots = shots;
     }
 
     public String getOrder()
     {
-        return wrappedBeverage.getOrder() + ", Vanilla";
+        return wrappedBeverage.getOrder() + ", " + shots + "x Vanilla";
     }
 
     public double cost()
