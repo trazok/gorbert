@@ -22,11 +22,13 @@ public class CoffeeCursorWrapper extends CursorWrapper
     {
         String uuidString = getString(getColumnIndex(CoffeeDbSchema.CoffeeTable.Cols.UUID));
         String title = getString(getColumnIndex(CoffeeDbSchema.CoffeeTable.Cols.TITLE));
+        //String corder = getString(getColumnIndex(CoffeeDbSchema.CoffeeTable.Cols.CORDER));
         String description = getString(getColumnIndex(CoffeeDbSchema.CoffeeTable.Cols.DESCRIPTION));
         int isFavorited = getInt(getColumnIndex(CoffeeDbSchema.CoffeeTable.Cols.FAVORITED));
 
         Coffee coffee = new Coffee(UUID.fromString(uuidString));
         coffee.setTitle(title);
+        //coffee.setOrder(corder);
         coffee.setDescription(description);
         coffee.setFavorited(isFavorited != 0);
 

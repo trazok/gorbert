@@ -16,7 +16,7 @@ public class CoffeeDbSchema
             public static final String UUID = "uuid";
             public static final String TITLE = "title";
             public static final String DESCRIPTION = "desciption";
-           // public static final String ORDER = "order";
+           // public static final String CORDER = "corder";
             public static final String FAVORITED = "favorited";
 
         }

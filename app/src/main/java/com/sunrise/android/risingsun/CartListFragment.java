@@ -18,6 +18,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -32,12 +33,19 @@ public class CartListFragment extends Fragment
 {
     private RecyclerView mCartRecyclerView;
     private CartAdapter mAdapter;
+    private Button mOrderButton;
+    private TextView mTotalCostView;
 
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
+
+    }
+
+    public void placeOrder()
+    {
 
     }
 
@@ -52,6 +60,18 @@ public class CartListFragment extends Fragment
                 .findViewById(R.id.cart_recycler_view);
         mCartRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
+        mOrderButton = (Button) view.findViewById(R.id.place_order_button);
+        mOrderButton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                Toast.makeText(getActivity(), R.string.order_placed, Toast.LENGTH_SHORT).show();
+                placeOrder();
+            }
+        });
+        mTotalCostView = (TextView) view.findViewById(R.id.order_total_view);
+        mTotalCostView.setText("$" + ShoppingCart.getInstance().total());
         updateUI();
 
         return view;
@@ -71,13 +91,7 @@ public class CartListFragment extends Fragment
         inflater.inflate(R.menu.fragment_cart_list, menu);
     }
 
-    private String getTotalCost()
-    {
-        double total = ShoppingCart.getInstance().total();
-        String orderTotal = getString(R.string.order_total, total);
 
-        return orderTotal;
-    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item)
@@ -87,6 +101,8 @@ public class CartListFragment extends Fragment
             case R.id.shopping_cart:
                 return true;
             case R.id.coffee_favorited:
+                Intent favorite_intent = new Intent(getActivity(), FavoriteListActivity.class);
+                startActivity(favorite_intent);
 
                 return true;
             case R.id.coffee_menu:

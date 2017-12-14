@@ -25,7 +25,11 @@
         </activity>
         <activity android:name=".CartPagerActivity"
                   android:parentActivityName=".ShoppingCartActivity">
-
+        </activity>
+        <activity android:name=".FavoriteListActivity">
+        </activity>
+        <activity android:name=".FavoritePagerActivity"
+                  android:parentActivityName=".FavoriteListActivity">
         </activity>
     </application>
 

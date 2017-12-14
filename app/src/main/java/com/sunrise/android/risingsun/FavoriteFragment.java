@@ -27,11 +27,12 @@ import com.sunrise.android.risingsun.beverage.WhippedCream;
 import java.util.UUID;
 
 /**
- * Created by dell on 11/26/2017.
+ * Created by dell on 12/14/2017.
  */
 
-public class CoffeeFragment extends Fragment
+public class FavoriteFragment extends Fragment
 {
+
     private static final String ARG_COFFEE_ID = "coffee_id";
 
     private Coffee mCoffee;
@@ -54,12 +55,12 @@ public class CoffeeFragment extends Fragment
 
 
 
-    public static CoffeeFragment newInstance(UUID coffeeId)
+    public static FavoriteFragment newInstance(UUID coffeeId)
     {
         Bundle args = new Bundle();
         args.putSerializable(ARG_COFFEE_ID, coffeeId);
 
-        CoffeeFragment fragment = new CoffeeFragment();
+        FavoriteFragment fragment = new FavoriteFragment();
 
         fragment.setArguments(args);
         return fragment;
@@ -73,7 +74,7 @@ public class CoffeeFragment extends Fragment
         super.onCreate(savedInstanceState);
         UUID coffeeId = (UUID) getArguments().getSerializable(ARG_COFFEE_ID);
 
-        mCoffee = CoffeeShop.get(getActivity()).getCoffee(coffeeId);
+        mCoffee = FavoriteList.get(getActivity()).getCoffee(coffeeId);
     }
 
     @Override
@@ -81,7 +82,7 @@ public class CoffeeFragment extends Fragment
     {
         super.onPause();
 
-        CoffeeShop.get(getActivity())
+        FavoriteList.get(getActivity())
                 .updateCoffee(mCoffee);
     }
 
@@ -89,7 +90,7 @@ public class CoffeeFragment extends Fragment
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
     {
-        View v = inflater.inflate(R.layout.fragment_coffee, container, false);
+        View v = inflater.inflate(R.layout.fragment_favorite, container, false);
 
         mTitleField = (TextView) v.findViewById(R.id.coffee_title_view);
         mDescriptionField = (TextView) v.findViewById(R.id.coffee_description_view);

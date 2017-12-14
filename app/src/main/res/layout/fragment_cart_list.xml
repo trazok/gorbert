@@ -20,10 +20,10 @@
         android:layout_marginTop="8dp"/>
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/order_total_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text="@string/order_total"
         android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginLeft="8dp"

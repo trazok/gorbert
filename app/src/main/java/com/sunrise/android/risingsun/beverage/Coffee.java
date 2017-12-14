@@ -36,6 +36,11 @@ public class Coffee
         mTitle = title;
     }
 
+    public void setOrder(String order)
+    {
+        mOrder = order;
+    }
+
     public String getTitle()
     {
         return mTitle;
