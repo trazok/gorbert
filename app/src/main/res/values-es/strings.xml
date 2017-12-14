@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="coffee_title_label">Titlo</string>
+    <string name="coffee_description_label">Descripcion</string>
+    <string name="app_name">Casa del Sol Naciente</string>
+    <string name="espresso_shots_label">las Copitas del Cafe Espreso</string>
+    <string name="caramel_shots_label">las Copitas del Caramelo</string>
+    <string name="chocolate_shots_label">las Copitas del Chocolate</string>
+    <string name="hazelnut_shots_label">las Copitas del Avellana</string>
+    <string name="vanilla_shots_label">las Copitas del Vainilla</string>
+    <string name="whipped_cream_label">Crema Batida</string>
+    <string name="order_button_label">Anadir al Carro</string>
+    <string name="large_radio_label">20 Onzas</string>
+    <string name="small_radio_label">16 Onzas</string>
+    <string name="almond_milk_checkbox_label">la Leche de Almendra</string>
+    <string name="shot_spinner_prompt">Seleccionar Numero de Copitas</string>
+    <string name="remove_button_label">Remove</string>
+    <string name="item_removed">Removed from cart!</string>
+    <string name="add_to_cart_button_label">Add to cart</string>
+
+    <string name="shopping_cart">Shopping Cart</string>
+    <string name="coffee_menu">Menu</string>
+    <string name="favorited_menu">los Favoritos</string>
+    <string name="show_subtitle">Show Subtitle</string>
+    <string name="hide_subtitle">Hide Subtitle</string>
+    <string name="order_total">Total: $</string>
+    <string name="item_added">Anadido al Carro!</string>
+    <string name="order_placed">Your order will be ready soon!</string>
+
+
+    <string-array name="shot_count_list">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+    </string-array>
+
+</resources>
