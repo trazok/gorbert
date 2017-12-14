@@ -19,6 +19,14 @@
             android:name=".CoffeePagerActivity"
             android:parentActivityName=".CoffeeListActivity">
         </activity>
+        <activity
+            android:name=".ShoppingCartActivity">
+
+        </activity>
+        <activity android:name=".CartPagerActivity"
+                  android:parentActivityName=".ShoppingCartActivity">
+
+        </activity>
     </application>
 
 </manifest>

@@ -1,5 +1,9 @@
 package com.sunrise.android.risingsun;
 
+/**
+ * Created by dell on 12/13/2017.
+ */
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -18,19 +22,16 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
 import com.sunrise.android.risingsun.beverage.Coffee;
 
 import java.util.List;
 
-/**
- * Created by dell on 11/26/2017.
- */
 
-public class CoffeeListFragment extends Fragment
+public class CartListFragment extends Fragment
 {
-
-    private RecyclerView mCoffeeRecyclerView;
-    private CoffeeAdapter mAdapter;
+    private RecyclerView mCartRecyclerView;
+    private CartAdapter mAdapter;
 
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -45,11 +46,11 @@ public class CoffeeListFragment extends Fragment
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
     {
-        View view = inflater.inflate(R.layout.fragment_coffee_list, container, false);
+        View view = inflater.inflate(R.layout.fragment_cart_list, container, false);
 
-        mCoffeeRecyclerView = (RecyclerView) view
-                .findViewById(R.id.coffee_recycler_view);
-        mCoffeeRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        mCartRecyclerView = (RecyclerView) view
+                .findViewById(R.id.cart_recycler_view);
+        mCartRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         updateUI();
 
@@ -67,7 +68,15 @@ public class CoffeeListFragment extends Fragment
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater)
     {
         super.onCreateOptionsMenu(menu, inflater);
-        inflater.inflate(R.menu.fragment_coffee_list, menu);
+        inflater.inflate(R.menu.fragment_cart_list, menu);
+    }
+
+    private String getTotalCost()
+    {
+        double total = ShoppingCart.getInstance().total();
+        String orderTotal = getString(R.string.order_total, total);
+
+        return orderTotal;
     }
 
     @Override
@@ -76,13 +85,14 @@ public class CoffeeListFragment extends Fragment
         switch (item.getItemId())
         {
             case R.id.shopping_cart:
-                Intent cart_intent = new Intent(getActivity(), ShoppingCartActivity.class);
-                startActivity(cart_intent);
                 return true;
             case R.id.coffee_favorited:
 
                 return true;
             case R.id.coffee_menu:
+                Intent menu_intent = new Intent(getActivity(), CoffeeListActivity.class);
+                startActivity(menu_intent);
+
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -93,13 +103,13 @@ public class CoffeeListFragment extends Fragment
 
     private void updateUI()
     {
-        CoffeeShop coffeeShop = CoffeeShop.get(getActivity());
-        List<Coffee> coffees = coffeeShop.getCoffees();
+        ShoppingCart cart = ShoppingCart.getInstance();
+        List<Coffee> coffees = cart.getOrder();
 
         if (mAdapter == null)
         {
-            mAdapter = new CoffeeAdapter(coffees);
-            mCoffeeRecyclerView.setAdapter(mAdapter);
+            mAdapter = new CartAdapter(coffees);
+            mCartRecyclerView.setAdapter(mAdapter);
         }
         else
         {
@@ -139,16 +149,17 @@ public class CoffeeListFragment extends Fragment
         @Override
         public void onClick(View view)
         {
-            Intent intent = CoffeePagerActivity.newIntent(getActivity(), mCoffee.getId());
+            Intent intent = CartPagerActivity.newIntent(getActivity(), mCoffee.getId());
             startActivity(intent);
         }
     }
 
-    private class CoffeeAdapter extends RecyclerView.Adapter<CoffeeHolder>
+
+    private class CartAdapter extends RecyclerView.Adapter<CoffeeHolder>
     {
         private List<Coffee> mCoffees;
 
-        public CoffeeAdapter(List<Coffee> coffees)
+        public CartAdapter(List<Coffee> coffees)
         {
             mCoffees = coffees;
         }
@@ -180,4 +191,5 @@ public class CoffeeListFragment extends Fragment
             mCoffees = coffees;
         }
     }
+
 }

@@ -6,12 +6,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
-import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -28,16 +24,15 @@ import com.sunrise.android.risingsun.beverage.SulawesiBlend;
 import com.sunrise.android.risingsun.beverage.VanillaShot;
 import com.sunrise.android.risingsun.beverage.WhippedCream;
 
-import org.w3c.dom.Text;
-
 import java.util.UUID;
 
 /**
- * Created by dell on 11/26/2017.
+ * Created by dell on 12/13/2017.
  */
 
-public class CoffeeFragment extends Fragment
+public class CartFragment extends Fragment
 {
+
     private static final String ARG_COFFEE_ID = "coffee_id";
 
     private Coffee mCoffee;
@@ -50,7 +45,7 @@ public class CoffeeFragment extends Fragment
     private Spinner mChocolateSpinner;
     private Spinner mHazelnutSpinner;
     private Spinner mVanillaSpinner;
-    private Button mAddToCart;
+    private Button mRemoveFromCart;
     private RadioGroup mSizeRadio;
 
     ShoppingCart mCart = ShoppingCart.getInstance();
@@ -60,12 +55,12 @@ public class CoffeeFragment extends Fragment
 
 
 
-    public static CoffeeFragment newInstance(UUID coffeeId)
+    public static CartFragment newInstance(UUID coffeeId)
     {
         Bundle args = new Bundle();
         args.putSerializable(ARG_COFFEE_ID, coffeeId);
 
-        CoffeeFragment fragment = new CoffeeFragment();
+        CartFragment fragment = new CartFragment();
 
         fragment.setArguments(args);
         return fragment;
@@ -79,7 +74,7 @@ public class CoffeeFragment extends Fragment
         super.onCreate(savedInstanceState);
         UUID coffeeId = (UUID) getArguments().getSerializable(ARG_COFFEE_ID);
 
-        mCoffee = CoffeeShop.get(getActivity()).getCoffee(coffeeId);
+        mCoffee = ShoppingCart.getInstance().getCoffee(coffeeId);
     }
 
     @Override
@@ -87,15 +82,15 @@ public class CoffeeFragment extends Fragment
     {
         super.onPause();
 
-        CoffeeShop.get(getActivity())
-                .updateCoffee(mCoffee);
+
     }
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
     {
-        View v = inflater.inflate(R.layout.fragment_coffee, container, false);
+        View v = inflater.inflate(R.layout.fragment_cart, container, false);
+
 
         mTitleField = (TextView) v.findViewById(R.id.coffee_title_view);
         mDescriptionField = (TextView) v.findViewById(R.id.coffee_description_view);
@@ -115,52 +110,15 @@ public class CoffeeFragment extends Fragment
         mChocolateSpinner = (Spinner) v.findViewById(R.id.chocolate_shots_spinner);
         mVanillaSpinner = (Spinner) v.findViewById(R.id.vanilla_shots_spinner);
 
-        mAddToCart = (Button) v.findViewById(R.id.order_button);
-        mAddToCart.setOnClickListener(new View.OnClickListener()
+        mRemoveFromCart = (Button) v.findViewById(R.id.remove_button);
+        mRemoveFromCart.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View view)
             {
-                //add radio size code
-                mCoffee = new Latte(new SulawesiBlend(2));
+                ShoppingCart.getInstance().remove(mCoffee);
 
-                if (mAlmondMilkCheckBox.isChecked())
-                {
-                    mCoffee = new AlmondMilk(mCoffee);
-                }
-
-                if (mEspressoSpinner.getSelectedItemPosition() > 0)
-                {
-                    mCoffee = new Espresso(mCoffee, mEspressoSpinner.getSelectedItemPosition());
-                }
-
-                if (mCaramelSpinner.getSelectedItemPosition() > 0)
-                {
-                    mCoffee = new CaramelShot(mCoffee, mCaramelSpinner.getSelectedItemPosition());
-                }
-
-                if (mChocolateSpinner.getSelectedItemPosition() > 0)
-                {
-                    mCoffee = new ChocolateShot(mCoffee, mChocolateSpinner.getSelectedItemPosition());
-                }
-
-                if (mHazelnutSpinner.getSelectedItemPosition() > 0)
-                {
-                    mCoffee = new HazelnutShot(mCoffee, mHazelnutSpinner.getSelectedItemPosition());
-                }
-
-                if (mVanillaSpinner.getSelectedItemPosition() > 0)
-                {
-                    mCoffee = new VanillaShot(mCoffee, mVanillaSpinner.getSelectedItemPosition());
-                }
-
-                if (mWhippedCheckBox.isChecked())
-                {
-                    mCoffee = new WhippedCream(mCoffee);
-                }
-
-                mCart.add(mCoffee);
-                Toast.makeText(getActivity(), R.string.item_added, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), R.string.item_removed, Toast.LENGTH_SHORT).show();
             }
         });
 

@@ -13,11 +13,15 @@
     <string name="small_radio_label">16oz</string>
     <string name="almond_milk_checkbox_label">Almond Milk</string>
     <string name="shot_spinner_prompt">Select number of shots</string>
+    <string name="remove_button_label">Remove</string>
+    <string name="item_removed">Removed from cart!</string>
 
     <string name="shopping_cart">Shopping Cart</string>
+    <string name="coffee_menu">Menu</string>
+    <string name="favorited_menu">Favorites</string>
     <string name="show_subtitle">Show Subtitle</string>
     <string name="hide_subtitle">Hide Subtitle</string>
-    <string name="subtitle_format">%1$d coffees</string>
+    <string name="order_total">Total: %.2$f</string>
     <string name="item_added">Placed in cart!</string>
 
 
