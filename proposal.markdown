@@ -14,7 +14,8 @@ Features:
   * view top rated, most searched quotes -- track statistics of app usage to allow users to view popular content
     * view recommendations based on similar films -- I have absolutely zero idea how to implement something like this; 
     * link to services to stream or purchase a film -- 
-  
+    * play a clip of the quote -- not sure how to do this without manually screening youtube clips
+  
 
 ### Similar Work
 * Shazam (app) -- I'm aiming for a similar functionality, but shazam is designed to identify songs from an audio clip, whereas my idea aims to identify movie quotes from an audio clip or text input. Several extended features are poached from shazam.
