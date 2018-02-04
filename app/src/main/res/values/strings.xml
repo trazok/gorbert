@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Rising Sun</string>
+    <string name="order_button_text">Order a coffee</string>
 
 </resources>
