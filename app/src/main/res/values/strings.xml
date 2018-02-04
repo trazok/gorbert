@@ -1,7 +1,4 @@
 <resources>
-    <string name="app_name">Rosebud</string>
-    <string name="default_search">Enter quote to search...</string>
-    <string name="search_button">Search</string>
-    <string name="file_title">File Title</string>
-    <string name="movie_title">Movie Title</string>
+    <string name="app_name">Rising Sun</string>
+
 </resources>
