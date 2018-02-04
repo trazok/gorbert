@@ -6,17 +6,24 @@ package com.gorbert.android.rosebud;
 
 public class Beverage
 {
-    public static final int LARGE = 2;
-    public static final int SMALL = 1;
+    public static final double ESPRESSO_PRICE = .70;
+    public static final double FLAVOR_PRICE = .50;
+    public static final double WHIPPED_PRICE = .75;
 
-    public static final int COLUMBIAN = 3;
-    public static final int SULAWESI = 4;
-    public static final int LATTE = 5;
-    public static final int CAPPUCCINO = 6;
-    public static final int HOT_CHOCOLATE = 7;
-    public static final int CHAI_LATTE = 8;
-    public static final int TEA = 9;
+    public static final int LARGE = 1;
+    public static final int SMALL = 0;
 
+    public static final int TEA = 0;
+    public static final int COLUMBIAN = 1;
+    public static final int SULAWESI = 2;
+    public static final int LATTE = 3;
+    public static final int CAPPUCCINO = 4;
+    public static final int HOT_CHOCOLATE = 5;
+    public static final int CHAI_LATTE = 6;
+    public static final int AMERICANO = 7;
+
+    private int mSize;
+    private int mDrinkType;
     private int mEspressoShots;
     private int mCaramelShots;
     private int mChocolateShots;
@@ -24,14 +31,25 @@ public class Beverage
     private int mVanillaShots;
     private int mWhippedCream;
 
+    private double mPrice;
+
+    private double[][] mBasePrices = {{1.95, 2.00, 2.00, 3.25, 3.25, 2.15, 4.00, 2.50},
+            {2.45, 2.25, 2.25, 3.75, 3.75, 2.50, 4.50, 3.00}
+    };
+
     public Beverage(int size, int drinkType)
     {
-
+        mPrice = mBasePrices[size][drinkType];
+        mSize = size;
+        mDrinkType = drinkType;
     }
 
     public double cost()
     {
-        return 0;
+        double price = mPrice + (mEspressoShots * ESPRESSO_PRICE) + (mWhippedCream * WHIPPED_PRICE) +
+                ((mCaramelShots + mChocolateShots + mHazelnutShots + mVanillaShots) * FLAVOR_PRICE);
+
+        return price;
     }
 
     public String toString()
@@ -39,6 +57,35 @@ public class Beverage
         return "";
     }
 
+    public double getPrice()
+    {
+        return mPrice;
+    }
+
+    public int getSize()
+    {
+        return mSize;
+    }
+
+    public void setSize(int size)
+    {
+        mSize = size;
+    }
+
+    public int getDrinkType()
+    {
+        return mDrinkType;
+    }
+
+    public void setDrinkType(int drinkType)
+    {
+        mDrinkType = drinkType;
+    }
+
+    public void setPrice(double price)
+    {
+        mPrice = price;
+    }
 
     public int getEspressoShots()
     {
