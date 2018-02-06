@@ -72,12 +72,46 @@ public class Beverage
 
         switch (mDrinkType)
         {
-            case 1:
+            case 0: orderSummary += "ERROR, TEA CASE";
+                break;
+            case 1: orderSummary += "Columbian;";
+                break;
+            case 2: orderSummary += "Sulawesi;";
+                break;
+            case 3: orderSummary += "latte;";
+                break;
+            case 4: orderSummary += "cappuccino;";
+                break;
+            case 5: orderSummary += "hot chocolate;";
+                break;
+            case 6: orderSummary += "chai latte;";
+                break;
+            case 7: orderSummary += "americano;";
+                break;
+            default: orderSummary += "ERROR, DEFAULT CASE";
+                break;
         }
+
+        if (mAlmondMilk)
+            orderSummary += " almond milk";
+        if (mEspressoShots > 0)
+            orderSummary += " " + mEspressoShots + "espresso;";
+        if (mVanillaShots > 0)
+            orderSummary += " " + mVanillaShots + "vanilla;";
+        if (mChocolateShots > 0)
+            orderSummary += " " + mChocolateShots + "chocolate;";
+        if (mHazelnutShots > 0)
+            orderSummary += " " + mHazelnutShots + "hazelnut;";
+        if (mCaramelShots > 0)
+            orderSummary += " " + mCaramelShots + "caramel;";
+        if (mWhippedCream > 0)
+            orderSummary += " " + mWhippedCream + "whipped cream;";
+
+
 
         return orderSummary;
     }
-    
+
     public int getSize()
     {
         return mSize;
@@ -97,6 +131,10 @@ public class Beverage
     {
         mDrinkType = drinkType;
     }
+
+    public boolean getAlmondMilk()  {return mAlmondMilk;}
+
+    public void setAlmondMilk(boolean almondMilk)    {mAlmondMilk = almondMilk;}
 
     public int getEspressoShots()
     {
