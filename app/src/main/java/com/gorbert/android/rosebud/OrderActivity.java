@@ -7,6 +7,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import java.io.BufferedReader;
+import java.io.DataOutputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
 /**
  * Created by dell on 2/3/2018.
  */
@@ -28,15 +34,29 @@ public class OrderActivity extends AppCompatActivity
             @Override
             public void onClick(View view)
             {
-                placeOrder();
+                try
+                {
+                    placeOrder();
+
+                }
+                catch (Exception e)
+                {
+
+                };
 
             }
         });
     }
 
-    public void placeOrder()
+    public void placeOrder() throws Exception
     {
         //contact servlet to log order
+        String order = "black coffee";
+        String url = "[http://localhost:9999/place_order/url?str=" + order + "]";
+
+        URL obj = new URL(url);
+        HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+
         Toast.makeText(this, R.string.order_toast, Toast.LENGTH_SHORT).show();
     }
 }
