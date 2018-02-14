@@ -52,14 +52,15 @@ public class OrderActivity extends AppCompatActivity
     {
         //contact servlet to log order
         String order = "black coffee";
-        String url = "[https://585302d3.ngrok.io//receive_order/order]";
-        byte[] postDataBytes = order.getBytes();
+        String url = "[192.168.1.4:9999/receive_order/order]";
+        //byte[] postDataBytes = order.getBytes();
         URL obj = new URL(url);
         HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+        
 
-        con.setRequestMethod("POST");
-        con.setDoOutput(true);
-        con.getOutputStream().write(postDataBytes);
+        //con.setRequestMethod("POST");
+        //con.setDoOutput(true);
+        //con.getOutputStream().write(postDataBytes);
 
         //if (response == con.HTTP_OK)
         Toast.makeText(this, R.string.order_toast, Toast.LENGTH_SHORT).show();
