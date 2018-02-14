@@ -62,10 +62,20 @@ public class OrderActivity extends AppCompatActivity
     {
         private String mOrder;
 
+        System.
+        System.setProperty("http.proxyHost", "127.0.0.1");
+	    System.setProperty("https.proxyHost", "127.0.0.1");
+	    System.setProperty("http.proxyPort", "8888");
+	    System.setProperty("https.proxyPort", "8888");
+
+
+
         public PlaceOrderTask(String order)
         {
             mOrder = order;
         }
+
+
 
         @Override
         protected Integer doInBackground(String... order)
@@ -155,8 +165,8 @@ public class OrderActivity extends AppCompatActivity
     public void placeOrder() throws Exception
     {
 
-        PlaceOrderTask placeOrder = new PlaceOrderTask("black coffee");
-        placeOrder.doInBackground();
+        new PlaceOrderTask("black coffee").execute();
+
         //if (response == con.HTTP_OK)
         Toast.makeText(this, R.string.order_toast, Toast.LENGTH_SHORT).show();
     }
