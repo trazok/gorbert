@@ -44,6 +44,7 @@ public class OrderActivity extends AppCompatActivity
                 }
                 catch (Exception e)
                 {
+                    System.out.println(e.toString());
 
                 };
 
@@ -53,7 +54,7 @@ public class OrderActivity extends AppCompatActivity
 
     public void placeOrder() throws Exception
     {
-        URL url = new URL("http://example.net/new-message.php");
+        URL url = new URL("https://fcd8aacf.ngrok.io/receive_order/order");
 
         Map<String,Object> params = new LinkedHashMap<>();
         params.put("order", "Black Coffee");
