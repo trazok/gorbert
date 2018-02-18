@@ -91,7 +91,7 @@ public class OrderActivity extends AppCompatActivity
             URL url = null;
             try
             {
-                url = new URL("http://192.168.1.6:9999/receive_order/order");
+                url = new URL("http://192.168.1.6:9999/receive_order/order"); //dear god, dont forget the http
             }
             catch (MalformedURLException e)
             {
@@ -136,16 +136,18 @@ public class OrderActivity extends AppCompatActivity
                 e.printStackTrace();
             }
 
+            Integer code = 0;
             try
             {
                 InputStream response = connection.getInputStream();
+                code = response.read();
             } catch (IOException e)
             {
                 e.printStackTrace();
             }
 
 
-            return 0;
+            return code;
         }
 
 
