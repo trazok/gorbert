@@ -30,10 +30,21 @@ public class OrderActivity extends AppCompatActivity
 {
     private Button mOrderButton;
 
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+
+        System.setProperty("http.proxyHost", "127.0.0.1");
+        System.setProperty("https.proxyHost", "127.0.0.1");
+        System.setProperty("http.proxyPort", "8888");
+        System.setProperty("https.proxyPort", "8888");
+
+
+
 
         setContentView(R.layout.activity_order);
 
@@ -61,12 +72,6 @@ public class OrderActivity extends AppCompatActivity
     private class PlaceOrderTask extends AsyncTask<String, Void, Integer>
     {
         private String mOrder;
-        mOrder = "tea";
-
-        System.setProperty("http.proxyHost", "127.0.0.1");
-        System.setProperty("https.proxyHost", "127.0.0.1");
-	    System.setProperty("http.proxyPort", "8888");
-	    System.setProperty("https.proxyPort", "8888");
 
 
 
@@ -84,7 +89,7 @@ public class OrderActivity extends AppCompatActivity
             URL url = null;
             try
             {
-                url = new URL("https://fcd8aacf.ngrok.io/receive_order/order");
+                url = new URL("https://localhost:9999/receive_order/order");
             } catch (MalformedURLException e)
             {
                 e.printStackTrace();
@@ -138,14 +143,16 @@ public class OrderActivity extends AppCompatActivity
                 try
                 {
                     conn.setRequestMethod("POST");
+                    conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+                    conn.setRequestProperty("Content-Length", String.valueOf(postDataBytes.length));
+                    conn.setDoOutput(true);
                 } catch (ProtocolException e)
                 {
                     e.printStackTrace();
                 }
+
+
             }
-            conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
-                conn.setRequestProperty("Content-Length", String.valueOf(postDataBytes.length));
-                conn.setDoOutput(true);
             try
             {
                 conn.getOutputStream().write(postDataBytes);

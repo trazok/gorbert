@@ -34,6 +34,8 @@ public class Beverage
     private boolean mAlmondMilk;
 
 
+
+
     private double[][] mBasePrices = {{1.95, 2.00, 2.00, 3.25, 3.25, 2.15, 4.00, 2.50},
             {2.45, 2.25, 2.25, 3.75, 3.75, 2.50, 4.50, 3.00}
     };
@@ -42,6 +44,7 @@ public class Beverage
     {
         mSize = size;
         mDrinkType = drinkType;
+
     }
 
     public double cost()
