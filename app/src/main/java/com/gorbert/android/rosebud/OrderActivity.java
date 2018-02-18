@@ -11,12 +11,15 @@ import android.widget.Toast;
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
+import java.net.URLConnection;
 import java.net.URLEncoder;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -85,81 +88,62 @@ public class OrderActivity extends AppCompatActivity
         @Override
         protected Integer doInBackground(String... order)
         {
-
             URL url = null;
             try
             {
-                url = new URL("https://localhost:9999/receive_order/order");
-            } catch (MalformedURLException e)
+                url = new URL("http://192.168.1.6:9999/receive_order/order");
+            }
+            catch (MalformedURLException e)
             {
                 e.printStackTrace();
             }
 
-            Map<String, Object> params = new LinkedHashMap<>();
-                params.put("order", "Black Coffee");
+            String charset = "UTF-8";
+            String param1 = "black";
+            String param2 = "coffee";
 
-                StringBuilder postData = new StringBuilder();
-                for (Map.Entry<String, Object> param : params.entrySet())
-                {
-                    if (postData.length() != 0) postData.append('&');
-                    try
-                    {
-                        postData.append(URLEncoder.encode(param.getKey(), "UTF-8"));
-                    } catch (UnsupportedEncodingException e)
-                    {
-                        e.printStackTrace();
-                    }
-                    postData.append('=');
-                    try
-                    {
-                        postData.append(URLEncoder.encode(String.valueOf(param.getValue()), "UTF-8"));
-                    } catch (UnsupportedEncodingException e)
-                    {
-                        e.printStackTrace();
-                    }
-                }
-            byte[] postDataBytes = new byte[0];
+            String query = null;
             try
             {
-                postDataBytes = postData.toString().getBytes("UTF-8");
+                query = String.format("param1=%s&param2=%s",
+                        URLEncoder.encode(param1, charset),
+                        URLEncoder.encode(param2, charset));
             } catch (UnsupportedEncodingException e)
             {
                 e.printStackTrace();
             }
 
-            HttpURLConnection conn = null;
-            if (url != null)
-            {
-                try
-                {
-                    conn = (HttpURLConnection) url.openConnection();
-                } catch (IOException e)
-                {
-                    e.printStackTrace();
-                }
-            }
-            if (conn != null)
-            {
-                try
-                {
-                    conn.setRequestMethod("POST");
-                    conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
-                    conn.setRequestProperty("Content-Length", String.valueOf(postDataBytes.length));
-                    conn.setDoOutput(true);
-                } catch (ProtocolException e)
-                {
-                    e.printStackTrace();
-                }
 
-
-            }
+            URLConnection connection = null;
             try
             {
-                conn.getOutputStream().write(postDataBytes);
+                connection = url.openConnection();
             } catch (IOException e)
             {
                 e.printStackTrace();
             }
+
+
+            connection.setDoOutput(true); // Triggers POST.
+            connection.setRequestProperty("Accept-Charset", charset);
+            connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded;charset=" + charset);
+
+            try (OutputStream output = connection.getOutputStream()) {
+                output.write(query.getBytes(charset));
+
+            } catch (IOException e)
+            {
+                e.printStackTrace();
+            }
+
+            try
+            {
+                InputStream response = connection.getInputStream();
+            } catch (IOException e)
+            {
+                e.printStackTrace();
+            }
+
 
             return 0;
         }
