@@ -1,6 +1,46 @@
 <resources>
     <string name="app_name">Rising Sun</string>
-    <string name="order_button_text">Order a coffee</string>
     <string name="order_toast">Order placed!</string>
+
+
+    <string name="coffee_title_label">Title</string>
+    <string name="coffee_description_label">Description</string>
+    <string name="espresso_shots_label">Espresso Shots</string>
+    <string name="caramel_shots_label">Caramel Shots</string>
+    <string name="chocolate_shots_label">Chocolate Shots</string>
+    <string name="hazelnut_shots_label">Hazelnut Shots</string>
+    <string name="vanilla_shots_label">Vanilla Shots</string>
+    <string name="whipped_cream_label">Whipped Cream</string>
+    <string name="order_button_label">Place Order</string>
+    <string name="large_radio_label">20oz</string>
+    <string name="small_radio_label">16oz</string>
+    <string name="almond_milk_checkbox_label">Almond Milk</string>
+    <string name="shot_spinner_prompt">Select number of shots</string>
+    <string name="remove_button_label">Remove</string>
+    <string name="item_removed">Removed from cart!</string>
+    <string name="add_to_cart_button_label">Add to cart</string>
+
+    <string name="shopping_cart">Shopping Cart</string>
+    <string name="coffee_menu">Menu</string>
+    <string name="favorited_menu">Favorites</string>
+    <string name="show_subtitle">Show Subtitle</string>
+    <string name="hide_subtitle">Hide Subtitle</string>
+    <string name="order_total">Total: $</string>
+    <string name="item_added">Placed in cart!</string>
+    <string name="order_placed">Your order will be ready soon!</string>
+
+
+    <string-array name="shot_count_list">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+    </string-array>
+
 
 </resources>
