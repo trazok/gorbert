@@ -111,7 +111,7 @@ public class OrderActivity extends AppCompatActivity
 
     private class PlaceOrderTask extends AsyncTask<String, Void, Integer>
     {
-        private String mOrder;
+        private String mOrder = mCoffee.toString();
 
 
 
