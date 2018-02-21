@@ -1,10 +1,12 @@
 package com.gorbert.android.rosebud;
 
+import java.util.UUID;
+
 /**
  * Created by dell on 2/4/2018.
  */
 
-public class Beverage
+public class Coffee
 {
     public static final double ESPRESSO_PRICE = .70;
     public static final double FLAVOR_PRICE = .50;
@@ -23,28 +25,38 @@ public class Beverage
     public static final int CHAI_LATTE = 6;
     public static final int AMERICANO = 7;
 
-    private int mSize;
-    private int mDrinkType;
-    private int mEspressoShots;
-    private int mCaramelShots;
-    private int mChocolateShots;
-    private int mHazelnutShots;
-    private int mVanillaShots;
-    private int mWhippedCream;
-    private boolean mAlmondMilk;
+    protected int mSize;
+    protected int mDrinkType;
+    protected int mEspressoShots;
+    protected int mCaramelShots;
+    protected int mChocolateShots;
+    protected int mHazelnutShots;
+    protected int mVanillaShots;
+    protected int mWhippedCream;
+    protected boolean mAlmondMilk;
+
+    private UUID mId;
 
 
 
 
-    private double[][] mBasePrices = {{1.95, 2.00, 2.00, 3.25, 3.25, 2.15, 4.00, 2.50},
-            {2.45, 2.25, 2.25, 3.75, 3.75, 2.50, 4.50, 3.00}
+    private double[][] mBasePrices = {{1.95, 2.00, 2.00, 3.25, 3.25, 2.15, 4.00, 2.50},  //small prices
+                                      {2.45, 2.25, 2.25, 3.75, 3.75, 2.50, 4.50, 3.00}   //large prices
     };
 
-    public Beverage(int size, int drinkType)
+    public Coffee()
     {
-        mSize = size;
-        mDrinkType = drinkType;
+        this(UUID.randomUUID());
+    }
 
+    public Coffee(UUID id)
+    {
+        mId = id;
+    }
+
+    public UUID getId()
+    {
+        return mId;
     }
 
     public double cost()

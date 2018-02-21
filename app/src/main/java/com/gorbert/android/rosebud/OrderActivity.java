@@ -1,6 +1,5 @@
 package com.gorbert.android.rosebud;
 
-import android.app.Activity;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -12,22 +11,14 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.io.BufferedReader;
-import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
-import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
-import java.net.ProtocolException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.net.URLEncoder;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * Created by dell on 2/3/2018.
@@ -37,7 +28,7 @@ public class OrderActivity extends AppCompatActivity
 {
     private static final String ARG_COFFEE_ID = "coffee_id";
 
-    private Beverage mCoffee;
+    private Coffee mCoffee;
     private TextView mTitleField;
     private TextView mDescriptionField;
     private CheckBox mWhippedCheckBox;

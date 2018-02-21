@@ -6,7 +6,7 @@ package com.gorbert.android.rosebud;
  * Created by dell on 2/6/2018.
  */
 
-public class Tea extends Beverage
+public class Tea extends Coffee
 {
     private String[] mTeaTypes= {"Green", "British Breakfast", "Earl Grey", "Acai Green", "Tumeric Ginger",
         "Tumeric", "Peppermint Chocolate", "Darjeeling", "Hibiscus", "Milk Oolong"};
