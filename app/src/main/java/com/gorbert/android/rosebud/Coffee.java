@@ -34,7 +34,10 @@ public class Coffee
     protected int mVanillaShots;
     protected int mWhippedCream;
     protected boolean mAlmondMilk;
+    protected boolean isFavorited;
 
+    protected String mTitle = "Default Coffee";
+    protected String mDescription = "Unknown Beverage";
     private UUID mId;
 
 
@@ -57,6 +60,36 @@ public class Coffee
     public UUID getId()
     {
         return mId;
+    }
+
+    public boolean getFavorited()
+    {
+        return isFavorited;
+    }
+
+    public void setFavorited(boolean favorite)
+    {
+        isFavorited = favorite;
+    }
+
+    public String getTitle()
+    {
+        return mTitle;
+    }
+
+    public void setTitle(String title)
+    {
+        mTitle = title;
+    }
+
+    public String getDescription()
+    {
+        return mDescription;
+    }
+
+    public void setDescription(String description)
+    {
+        mDescription = description;
     }
 
     public double cost()

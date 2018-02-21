@@ -5,10 +5,10 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.sunrise.android.risingsun.beverage.*;
-import com.sunrise.android.risingsun.database.CoffeeBaseHelper;
-import com.sunrise.android.risingsun.database.CoffeeCursorWrapper;
-import com.sunrise.android.risingsun.database.CoffeeDbSchema.CoffeeTable;
+import com.gorbert.android.rosebud.Coffee;
+import com.gorbert.android.rosebud.database.CoffeeBaseHelper;
+import com.gorbert.android.rosebud.database.CoffeeCursorWrapper;
+import com.gorbert.android.rosebud.database.CoffeeDbSchema.CoffeeTable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +20,11 @@ import java.util.UUID;
 
 public class CoffeeShop
 {
+
+
+
+
+
     private static CoffeeShop sCoffeeShop;
 
     private Context mContext;
@@ -44,9 +49,23 @@ public class CoffeeShop
 
         if (getCoffees().size() == 0)
         {
+            Coffee coffee = new Coffee();
             //sulawesi
-            addCoffee(new SulawesiBlend(2));
+
+            coffee.setDrinkType(Coffee.SULAWESI);
+            coffee.setSize(Coffee.LARGE);
+            coffee.setTitle("");
+            coffee.setDescription("");
+            addCoffee(coffee);
+
             //columbian
+            coffee = new Coffee();
+            coffee.setDrinkType(Coffee.COLUMBIAN);
+            coffee.setSize(Coffee.LARGE);
+            coffee.setTitle("");
+            coffee.setDescription("");
+            addCoffee(coffee);
+
             addCoffee(new ColumbianBlend(2));
             //americano
             addCoffee(new Americano(2));
