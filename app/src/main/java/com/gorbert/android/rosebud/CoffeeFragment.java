@@ -37,7 +37,7 @@ public class CoffeeFragment extends Fragment
     private Button mAddToCart;
     private RadioGroup mSizeRadio;
 
-    //ShoppingCart mCart = ShoppingCart.getInstance();
+    ShoppingCart mCart = ShoppingCart.getInstance();
 
     private int shotCount;
 
@@ -120,7 +120,7 @@ public class CoffeeFragment extends Fragment
 
                 mCoffee.setWhippedCream(mWhippedCheckBox.isChecked());
 
-                //mCart.add(mCoffee);
+                mCart.add(mCoffee);
                 Toast.makeText(getActivity(), R.string.item_added, Toast.LENGTH_SHORT).show();
             }
         });
