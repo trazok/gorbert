@@ -32,7 +32,7 @@ public class Coffee
     protected int mChocolateShots;
     protected int mHazelnutShots;
     protected int mVanillaShots;
-    protected int mWhippedCream;
+    protected boolean mWhippedCream;
     protected boolean mAlmondMilk;
     protected boolean isFavorited;
 
@@ -96,11 +96,14 @@ public class Coffee
     {
         double price = mBasePrices[mSize][mDrinkType];
 
-        price += (mEspressoShots * ESPRESSO_PRICE) + (mWhippedCream * WHIPPED_PRICE) +
+        price += (mEspressoShots * ESPRESSO_PRICE)  +
                 ((mCaramelShots + mChocolateShots + mHazelnutShots + mVanillaShots) * FLAVOR_PRICE);
 
         if (mAlmondMilk)
             price += ALMOND_MILK_PRICE;
+
+        if (mWhippedCream)
+            price += WHIPPED_PRICE;
 
         return price;
     }
@@ -152,7 +155,7 @@ public class Coffee
             orderSummary += " " + mHazelnutShots + "hazelnut;";
         if (mCaramelShots > 0)
             orderSummary += " " + mCaramelShots + "caramel;";
-        if (mWhippedCream > 0)
+        if (mWhippedCream)
             orderSummary += " " + mWhippedCream + "whipped cream;";
 
 
@@ -234,12 +237,12 @@ public class Coffee
         mVanillaShots = vanillaShots;
     }
 
-    public int getWhippedCream()
+    public boolean getWhippedCream()
     {
         return mWhippedCream;
     }
 
-    public void setWhippedCream(int whippedCream)
+    public void setWhippedCream(boolean whippedCream)
     {
         mWhippedCream = whippedCream;
     }

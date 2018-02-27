@@ -106,40 +106,19 @@ public class CoffeeFragment extends Fragment
             public void onClick(View view)
             {
 
-                if (mAlmondMilkCheckBox.isChecked())
-                {
-                    mCoffee = new AlmondMilk(mCoffee);
-                }
+                mCoffee.setAlmondMilk(mAlmondMilkCheckBox.isChecked());
 
-                if (mEspressoSpinner.getSelectedItemPosition() > 0)
-                {
-                    mCoffee = new Espresso(mCoffee, mEspressoSpinner.getSelectedItemPosition());
-                }
+                mCoffee.setEspressoShots(mEspressoSpinner.getSelectedItemPosition());
 
-                if (mCaramelSpinner.getSelectedItemPosition() > 0)
-                {
-                    mCoffee = new CaramelShot(mCoffee, mCaramelSpinner.getSelectedItemPosition());
-                }
+                mCoffee.setCaramelShots(mCaramelSpinner.getSelectedItemPosition());
 
-                if (mChocolateSpinner.getSelectedItemPosition() > 0)
-                {
-                    mCoffee = new ChocolateShot(mCoffee, mChocolateSpinner.getSelectedItemPosition());
-                }
+                mCoffee.setChocolateShots(mChocolateSpinner.getSelectedItemPosition());
 
-                if (mHazelnutSpinner.getSelectedItemPosition() > 0)
-                {
-                    mCoffee = new HazelnutShot(mCoffee, mHazelnutSpinner.getSelectedItemPosition());
-                }
+                mCoffee.setHazelnutShots(mHazelnutSpinner.getSelectedItemPosition());
 
-                if (mVanillaSpinner.getSelectedItemPosition() > 0)
-                {
-                    mCoffee = new VanillaShot(mCoffee, mVanillaSpinner.getSelectedItemPosition());
-                }
+                mCoffee.setVanillaShots(mVanillaSpinner.getSelectedItemPosition());
 
-                if (mWhippedCheckBox.isChecked())
-                {
-                    mCoffee = new WhippedCream(mCoffee);
-                }
+                mCoffee.setWhippedCream(mWhippedCheckBox.isChecked());
 
                 //mCart.add(mCoffee);
                 Toast.makeText(getActivity(), R.string.item_added, Toast.LENGTH_SHORT).show();
