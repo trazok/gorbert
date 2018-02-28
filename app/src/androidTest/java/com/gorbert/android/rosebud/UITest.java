@@ -1,3 +1,5 @@
+package com.gorbert.android.rosebud;
+
 import static org.junit.Assert.*;
 
 /**
@@ -5,5 +7,13 @@ import static org.junit.Assert.*;
  */
 public class UITest
 {
+    //fragments each launch
+    //widgets all get created/work
+    //recycler views work
+    //view pagers work
+
+
+    //layouts all get properly inflated
+    //data passed between fragments/activities
 
 }
