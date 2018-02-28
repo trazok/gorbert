@@ -4,7 +4,7 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.sunrise.android.risingsun.database.CoffeeDbSchema;
+import com.gorbert.android.rosebud.database.CoffeeDbSchema;
 
 /**
  * Created by dell on 12/14/2017.

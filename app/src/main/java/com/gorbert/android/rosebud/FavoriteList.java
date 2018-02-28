@@ -5,9 +5,9 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.sunrise.android.risingsun.favoritedb.FavoriteCursorWrapper;
-import com.sunrise.android.risingsun.favoritedb.FavoritedBaseHelper;
-import com.sunrise.android.risingsun.favoritedb.FavoritedDbSchema;
+import com.gorbert.android.rosebud.favoritedb.FavoriteCursorWrapper;
+import com.gorbert.android.rosebud.favoritedb.FavoritedBaseHelper;
+import com.gorbert.android.rosebud.favoritedb.FavoritedDbSchema;
 
 import java.util.ArrayList;
 import java.util.List;
