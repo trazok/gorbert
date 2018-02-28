@@ -62,7 +62,7 @@ public class Coffee
         return mId;
     }
 
-    public boolean getFavorited()
+    public boolean isFavorited()
     {
         return isFavorited;
     }

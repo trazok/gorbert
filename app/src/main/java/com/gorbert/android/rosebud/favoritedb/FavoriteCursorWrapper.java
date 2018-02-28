@@ -3,7 +3,7 @@ package com.gorbert.android.rosebud.favoritedb;
 import android.database.Cursor;
 import android.database.CursorWrapper;
 
-import com.sunrise.android.risingsun.beverage.Coffee;
+import com.gorbert.android.rosebud.Coffee;
 
 import java.util.UUID;
 

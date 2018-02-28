@@ -13,9 +13,9 @@ public class Tea extends Coffee
 
     private int mTeaType;
 
-    public Tea(int size, int drinkType, int teaType)
+    public Tea(int teaType)
     {
-        super(size, drinkType);
+
         mTeaType = teaType;
 
     }
@@ -48,7 +48,7 @@ public class Tea extends Coffee
             orderSummary += " " + getHazelnutShots() + "hazelnut;";
         if (getCaramelShots() > 0)
             orderSummary += " " + getCaramelShots() + "caramel;";
-        if (getWhippedCream() > 0)
+        if (getWhippedCream())
             orderSummary += " " + getWhippedCream() + "whipped cream;";
 
 

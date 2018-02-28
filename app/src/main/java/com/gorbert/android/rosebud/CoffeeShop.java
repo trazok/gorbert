@@ -66,17 +66,46 @@ public class CoffeeShop
             coffee.setDescription("");
             addCoffee(coffee);
 
-            addCoffee(new ColumbianBlend(2));
             //americano
-            addCoffee(new Americano(2));
+            coffee = new Coffee();
+            coffee.setDrinkType(Coffee.COLUMBIAN);
+            coffee.setSize(Coffee.LARGE);
+            coffee.setTitle("");
+            coffee.setDescription("");
+            addCoffee(coffee);
+
             //chai latte
-            addCoffee(new ChaiLatte(2));
+            coffee = new Coffee();
+            coffee.setDrinkType(Coffee.CHAI_LATTE);
+            coffee.setSize(Coffee.LARGE);
+            coffee.setTitle("");
+            coffee.setDescription("");
+            addCoffee(coffee);
+
             //cappuccino
-            addCoffee(new Cappuccino(new ColumbianBlend(2)));
+            coffee = new Coffee();
+            coffee.setDrinkType(Coffee.CAPPUCCINO);
+            coffee.setSize(Coffee.LARGE);
+            coffee.setTitle("");
+            coffee.setDescription("");
+            addCoffee(coffee);
+
             //latte
-            addCoffee(new Latte(new ColumbianBlend(2)));
+            coffee = new Coffee();
+            coffee.setDrinkType(Coffee.LATTE);
+            coffee.setSize(Coffee.LARGE);
+            coffee.setTitle("");
+            coffee.setDescription("");
+            addCoffee(coffee);
+
             //hot chocolate
-            addCoffee(new HotChocolate(2));
+            coffee = new Coffee();
+            coffee.setDrinkType(Coffee.HOT_CHOCOLATE);
+            coffee.setSize(Coffee.LARGE);
+            coffee.setTitle("");
+            coffee.setDescription("");
+            addCoffee(coffee);
+
         }
     }
 
