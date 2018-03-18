@@ -88,7 +88,7 @@ public class CartListFragment extends Fragment
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater)
     {
         super.onCreateOptionsMenu(menu, inflater);
-        inflater.inflate(R.menu.fragment_cart_list, menu);
+        inflater.inflate(R.menu.fragment_coffee_list, menu);
     }
 
 
@@ -98,18 +98,15 @@ public class CartListFragment extends Fragment
     {
         switch (item.getItemId())
         {
-            case R.id.shopping_cart:
+            case R.id.cart_menu:
                 return true;
-            case R.id.coffee_favorited:
-                Intent favorite_intent = new Intent(getActivity(), FavoriteListActivity.class);
-                startActivity(favorite_intent);
 
-                return true;
+
             case R.id.coffee_menu:
                 Intent menu_intent = new Intent(getActivity(), CoffeeListActivity.class);
                 startActivity(menu_intent);
-
                 return true;
+
             default:
                 return super.onOptionsItemSelected(item);
         }

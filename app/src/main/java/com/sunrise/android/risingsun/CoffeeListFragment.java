@@ -75,17 +75,15 @@ public class CoffeeListFragment extends Fragment
     {
         switch (item.getItemId())
         {
-            case R.id.shopping_cart:
+            case R.id.cart_menu:
                 Intent cart_intent = new Intent(getActivity(), ShoppingCartActivity.class);
                 startActivity(cart_intent);
                 return true;
-            case R.id.coffee_favorited:
-                Intent favorited_intent = new Intent(getActivity(), FavoriteListActivity.class);
-                startActivity(favorited_intent);
 
-                return true;
+
             case R.id.coffee_menu:
                 return true;
+
             default:
                 return super.onOptionsItemSelected(item);
         }
