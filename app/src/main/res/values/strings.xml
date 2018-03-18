@@ -27,6 +27,22 @@
     <string name="order_placed">Your order will be ready soon!</string>
 
 
+    <string name="sulawesi_title_text">Sulawesi Coffee</string>
+    <string name="sulawesi_description_text">Our light, nutty roast</string>
+    <string name="columbian_title_text">Columbian Coffee</string>
+    <string name="columbian_description_text">Our rich, dark blend</string>
+    <string name="americano_title_text">Americano</string>
+    <string name="americano_description_text">Our bold espresso mixed with water</string>
+    <string name="chai_latte_title_text">Chai Latte</string>
+    <string name="chai_latte_description_text">Sweet, spiced chai blended with steamed milk</string>
+    <string name="cappuccino_title_text">Cappuccino</string>
+    <string name="cappuccino_description_text">A rich blend of foamed milk and espresso</string>
+    <string name="latte_title_text">Latte</string>
+    <string name="latte_description_text">A rich blend of steamed milk and espresso</string>
+    <string name="hot_chocolate_title_text">Hot Chocolate</string>
+    <string name="hot_chocolate_description_text">Hot, creamy milk and lucious chocolate</string>
+
+
     <string-array name="shot_count_list">
         <item>0</item>
         <item>1</item>

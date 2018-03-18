@@ -50,23 +50,53 @@ public class CoffeeShop
 
             coffee.setDrinkType(Coffee.SULAWESI);
             coffee.setSize(Coffee.LARGE);
-            coffee.setTitle("");
-            coffee.setDescription("");
+            coffee.setTitle(context.getString(R.string.sulawesi_title_text));
+            coffee.setDescription(context.getString(R.string.sulawesi_description_text));
             addCoffee(coffee);
 
             //columbian
             coffee = new Coffee();
             coffee.setDrinkType(Coffee.COLUMBIAN);
             coffee.setSize(Coffee.LARGE);
-            coffee.setTitle("");
-            coffee.setDescription("");
+            coffee.setTitle(context.getString(R.string.columbian_title_text));
+            coffee.setDescription(context.getString(R.string.columbian_description_text));
             addCoffee(coffee);
 
             //americano
+            coffee.setDrinkType(Coffee.AMERICANO);
+            coffee.setSize(Coffee.LARGE);
+            coffee.setTitle(context.getString(R.string.americano_title_text));
+            coffee.setDescription(context.getString(R.string.americano_description_text));
+            addCoffee(coffee);
+
             //chai latte
+            coffee.setDrinkType(Coffee.CHAI_LATTE);
+            coffee.setSize(Coffee.LARGE);
+            coffee.setTitle(context.getString(R.string.chai_latte_title_text));
+            coffee.setDescription(context.getString(R.string.chai_latte_description_text));
+            addCoffee(coffee);
+
             //cappuccino
+            coffee.setDrinkType(Coffee.CAPPUCCINO);
+            coffee.setSize(Coffee.LARGE);
+            coffee.setTitle(context.getString(R.string.cappuccino_title_text));
+            coffee.setDescription(context.getString(R.string.cappuccino_description_text));
+            addCoffee(coffee);
+
             //latte
+            coffee.setDrinkType(Coffee.LATTE);
+            coffee.setSize(Coffee.LARGE);
+            coffee.setTitle(context.getString(R.string.latte_title_text));
+            coffee.setDescription(context.getString(R.string.latte_description_text));
+            addCoffee(coffee);
+
             //hot chocolate
+            coffee.setDrinkType(Coffee.HOT_CHOCOLATE);
+            coffee.setSize(Coffee.LARGE);
+            coffee.setTitle(context.getString(R.string.hot_chocolate_title_text));
+            coffee.setDescription(context.getString(R.string.hot_chocolate_description_text));
+            addCoffee(coffee);
+
         }
     }
 
