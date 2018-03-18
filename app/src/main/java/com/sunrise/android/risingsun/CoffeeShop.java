@@ -5,7 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.sunrise.android.risingsun.beverage.*;
+import com.sunrise.android.risingsun.Coffee;
 import com.sunrise.android.risingsun.database.CoffeeBaseHelper;
 import com.sunrise.android.risingsun.database.CoffeeCursorWrapper;
 import com.sunrise.android.risingsun.database.CoffeeDbSchema;
@@ -45,21 +45,28 @@ public class CoffeeShop
                 .getWritableDatabase();
 
         if (getCoffees().size() == 0)
-        {
+        {Coffee coffee = new Coffee();
             //sulawesi
-            addCoffee(new SulawesiBlend(2));
+
+            coffee.setDrinkType(Coffee.SULAWESI);
+            coffee.setSize(Coffee.LARGE);
+            coffee.setTitle("");
+            coffee.setDescription("");
+            addCoffee(coffee);
+
             //columbian
-            addCoffee(new ColumbianBlend(2));
+            coffee = new Coffee();
+            coffee.setDrinkType(Coffee.COLUMBIAN);
+            coffee.setSize(Coffee.LARGE);
+            coffee.setTitle("");
+            coffee.setDescription("");
+            addCoffee(coffee);
+
             //americano
-            addCoffee(new Americano(2));
             //chai latte
-            addCoffee(new ChaiLatte(2));
             //cappuccino
-            addCoffee(new Cappuccino(new ColumbianBlend(2)));
             //latte
-            addCoffee(new Latte(new ColumbianBlend(2)));
             //hot chocolate
-            addCoffee(new HotChocolate(2));
         }
     }
 

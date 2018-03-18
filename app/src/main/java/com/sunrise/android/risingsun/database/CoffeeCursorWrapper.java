@@ -3,7 +3,7 @@ package com.sunrise.android.risingsun.database;
 import android.database.Cursor;
 import android.database.CursorWrapper;
 
-import com.sunrise.android.risingsun.beverage.Coffee;
+import com.sunrise.android.risingsun.Coffee;
 
 import java.util.UUID;
 

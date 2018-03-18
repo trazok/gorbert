@@ -15,7 +15,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.sunrise.android.risingsun.beverage.Coffee;
+import com.sunrise.android.risingsun.Coffee;
 
 import java.util.List;
 

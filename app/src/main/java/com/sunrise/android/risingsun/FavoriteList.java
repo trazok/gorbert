@@ -5,14 +5,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.sunrise.android.risingsun.beverage.Americano;
-import com.sunrise.android.risingsun.beverage.Cappuccino;
-import com.sunrise.android.risingsun.beverage.ChaiLatte;
-import com.sunrise.android.risingsun.beverage.Coffee;
-import com.sunrise.android.risingsun.beverage.ColumbianBlend;
-import com.sunrise.android.risingsun.beverage.HotChocolate;
-import com.sunrise.android.risingsun.beverage.Latte;
-import com.sunrise.android.risingsun.beverage.SulawesiBlend;
 import com.sunrise.android.risingsun.database.CoffeeBaseHelper;
 import com.sunrise.android.risingsun.database.CoffeeCursorWrapper;
 import com.sunrise.android.risingsun.database.CoffeeDbSchema;

@@ -1,6 +1,6 @@
 package com.sunrise.android.risingsun;
 
-import com.sunrise.android.risingsun.beverage.Coffee;
+import com.sunrise.android.risingsun.Coffee;
 
 import java.util.ArrayList;
 import java.util.List;

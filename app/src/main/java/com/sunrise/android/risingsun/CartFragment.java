@@ -13,17 +13,6 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.sunrise.android.risingsun.beverage.AlmondMilk;
-import com.sunrise.android.risingsun.beverage.CaramelShot;
-import com.sunrise.android.risingsun.beverage.ChocolateShot;
-import com.sunrise.android.risingsun.beverage.Coffee;
-import com.sunrise.android.risingsun.beverage.Espresso;
-import com.sunrise.android.risingsun.beverage.HazelnutShot;
-import com.sunrise.android.risingsun.beverage.Latte;
-import com.sunrise.android.risingsun.beverage.SulawesiBlend;
-import com.sunrise.android.risingsun.beverage.VanillaShot;
-import com.sunrise.android.risingsun.beverage.WhippedCream;
-
 import java.util.UUID;
 
 /**
