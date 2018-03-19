@@ -112,7 +112,7 @@ public class Coffee
     {
         String orderSummary = "DEFAULT ORDER";
 
-        if (mSize == 0)
+        if (mSize == SMALL)
         {
             orderSummary = "Small ";
         }
