@@ -38,6 +38,7 @@ public class CoffeeListFragment extends Fragment
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
 
+        
     }
 
 
