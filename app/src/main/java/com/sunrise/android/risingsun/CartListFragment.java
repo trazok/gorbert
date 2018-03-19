@@ -66,8 +66,14 @@ public class CartListFragment extends Fragment
             @Override
             public void onClick(View view)
             {
-                Toast.makeText(getActivity(), R.string.order_placed, Toast.LENGTH_SHORT).show();
-                placeOrder();
+                if (ShoppingCart.getInstance().total() > 0) {
+                    Toast.makeText(getActivity(), R.string.order_placed, Toast.LENGTH_SHORT).show();
+                    placeOrder();
+                }
+                else
+                {
+                    Toast.makeText(getActivity(), R.string.cart_empty, Toast.LENGTH_SHORT).show();
+                }
             }
         });
         mTotalCostView = (TextView) view.findViewById(R.id.order_total_view);
