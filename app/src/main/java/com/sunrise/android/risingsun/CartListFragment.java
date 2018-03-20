@@ -144,7 +144,7 @@ public class CartListFragment extends Fragment
 
         private TextView mTitleTextView;
         private TextView mDescriptionTextView;
-        private ImageView mFavoritedImageView;
+        private TextView mPriceTextView;
 
         public CoffeeHolder(LayoutInflater inflater, ViewGroup parent)
         {
@@ -153,7 +153,7 @@ public class CartListFragment extends Fragment
 
             mTitleTextView = (TextView) itemView.findViewById(R.id.coffee_title);
             mDescriptionTextView = (TextView) itemView.findViewById(R.id.coffee_description);
-            mFavoritedImageView = (ImageView) itemView.findViewById(R.id.coffee_favorited);
+            mPriceTextView = (TextView) itemView.findViewById(R.id.coffee_price);
         }
 
         public void bind(Coffee coffee)
@@ -162,7 +162,7 @@ public class CartListFragment extends Fragment
             mTitleTextView.setText(mCoffee.getTitle());
 
             mDescriptionTextView.setText(mCoffee.getDescription());
-            mFavoritedImageView.setVisibility(coffee.isFavorited() ? View.VISIBLE : View.GONE);
+            mPriceTextView.setText("" + mCoffee.cost());
         }
 
         @Override
