@@ -45,9 +45,10 @@ public class CoffeeShop
                 .getWritableDatabase();
 
         if (getCoffees().size() == 0)
-        {Coffee coffee = new Coffee();
-            //sulawesi
+        {
+            Coffee coffee = new Coffee();
 
+            //sulawesi
             coffee.setDrinkType(Coffee.SULAWESI);
             coffee.setSize(Coffee.LARGE);
             coffee.setTitle(context.getString(R.string.sulawesi_title_text));
@@ -63,6 +64,7 @@ public class CoffeeShop
             addCoffee(coffee);
 
             //americano
+            coffee = new Coffee();
             coffee.setDrinkType(Coffee.AMERICANO);
             coffee.setSize(Coffee.LARGE);
             coffee.setTitle(context.getString(R.string.americano_title_text));
@@ -70,6 +72,7 @@ public class CoffeeShop
             addCoffee(coffee);
 
             //chai latte
+            coffee = new Coffee();
             coffee.setDrinkType(Coffee.CHAI_LATTE);
             coffee.setSize(Coffee.LARGE);
             coffee.setTitle(context.getString(R.string.chai_latte_title_text));
@@ -77,6 +80,7 @@ public class CoffeeShop
             addCoffee(coffee);
 
             //cappuccino
+            coffee = new Coffee();
             coffee.setDrinkType(Coffee.CAPPUCCINO);
             coffee.setSize(Coffee.LARGE);
             coffee.setTitle(context.getString(R.string.cappuccino_title_text));
@@ -84,6 +88,7 @@ public class CoffeeShop
             addCoffee(coffee);
 
             //latte
+            coffee = new Coffee();
             coffee.setDrinkType(Coffee.LATTE);
             coffee.setSize(Coffee.LARGE);
             coffee.setTitle(context.getString(R.string.latte_title_text));
@@ -91,6 +96,7 @@ public class CoffeeShop
             addCoffee(coffee);
 
             //hot chocolate
+            coffee = new Coffee();
             coffee.setDrinkType(Coffee.HOT_CHOCOLATE);
             coffee.setSize(Coffee.LARGE);
             coffee.setTitle(context.getString(R.string.hot_chocolate_title_text));
