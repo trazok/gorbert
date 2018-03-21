@@ -258,7 +258,7 @@ public class CartListFragment extends Fragment
             try
             {
 
-                url = new URL("http://192.168.1.90:9999/receive_order/order"); //dear god, dont forget the http.
+                url = new URL("http://localhost:9999/receive_order/order"); //dear god, dont forget the http.
             }
             catch (MalformedURLException e)
             {
@@ -300,7 +300,7 @@ public class CartListFragment extends Fragment
 
             } catch (IOException e)
             {
-                
+
                 e.printStackTrace();
             }
 
