@@ -113,6 +113,7 @@ public class CoffeeListFragment extends Fragment
 
     private class CoffeeHolder extends RecyclerView.ViewHolder implements View.OnClickListener
     {
+        
         private Coffee mCoffee;
 
         private TextView mTitleTextView;
