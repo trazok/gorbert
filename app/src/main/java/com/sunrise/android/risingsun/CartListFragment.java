@@ -5,6 +5,7 @@ package com.sunrise.android.risingsun;
  */
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -26,6 +27,14 @@ import android.widget.Toast;
 
 import com.sunrise.android.risingsun.Coffee;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.io.UnsupportedEncodingException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
+import java.net.URLEncoder;
 import java.util.List;
 
 
@@ -42,11 +51,21 @@ public class CartListFragment extends Fragment
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
 
+        System.setProperty("http.proxyHost", "127.0.0.1");
+        System.setProperty("https.proxyHost", "127.0.0.1");
+        System.setProperty("http.proxyPort", "8888");
+        System.setProperty("https.proxyPort", "8888");
+
+
     }
 
-    public void placeOrder()
+    public void placeOrder() throws Exception
     {
 
+        new PlaceOrderTask("black coffee").execute();
+
+        //if (response == con.HTTP_OK)
+        Toast.makeText(getActivity(), R.string.order_placed, Toast.LENGTH_SHORT).show();
     }
 
 
@@ -67,8 +86,16 @@ public class CartListFragment extends Fragment
             public void onClick(View view)
             {
                 if (ShoppingCart.getInstance().total() > 0) {
-                    Toast.makeText(getActivity(), R.string.order_placed, Toast.LENGTH_SHORT).show();
-                    placeOrder();
+                    try
+                    {
+                        placeOrder();
+
+                    }
+                    catch (Exception e)
+                    {
+                        System.out.println(e.toString());
+
+                    };
                 }
                 else
                 {
@@ -210,5 +237,89 @@ public class CartListFragment extends Fragment
             mCoffees = coffees;
         }
     }
+
+    private class PlaceOrderTask extends AsyncTask<String, Void, Integer>
+    {
+        private String mOrder = "default test order";
+
+
+
+        public PlaceOrderTask(String order)
+        {
+            mOrder = order;
+        }
+
+
+
+        @Override
+        protected Integer doInBackground(String... order)
+        {
+            URL url = null;
+            try
+            {
+
+                url = new URL("http://192.168.1.90:9999/receive_order/order"); //dear god, dont forget the http.
+            }
+            catch (MalformedURLException e)
+            {
+                e.printStackTrace();
+            }
+
+            String charset = "UTF-8";
+            String param1 = "black";
+            String param2 = "coffee";
+
+            String query = null;
+            try
+            {
+                query = String.format("param1=%s&param2=%s",
+                        URLEncoder.encode(param1, charset),
+                        URLEncoder.encode(param2, charset));
+            } catch (UnsupportedEncodingException e)
+            {
+                e.printStackTrace();
+            }
+
+
+            URLConnection connection = null;
+            try
+            {
+                connection = url.openConnection();
+            } catch (IOException e)
+            {
+                e.printStackTrace();
+            }
+
+
+            connection.setDoOutput(true); // Triggers POST.
+            connection.setRequestProperty("Accept-Charset", charset);
+            connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded;charset=" + charset);
+
+            try (OutputStream output = connection.getOutputStream()) {
+                output.write(query.getBytes(charset));
+
+            } catch (IOException e)
+            {
+                e.printStackTrace();
+            }
+
+            Integer code = 0;
+            try
+            {
+                InputStream response = connection.getInputStream();
+                code = response.read();
+            } catch (IOException e)
+            {
+                e.printStackTrace();
+            }
+
+
+            return code;
+        }
+
+
+
+    }
+
 
 }
