@@ -300,6 +300,7 @@ public class CartListFragment extends Fragment
 
             } catch (IOException e)
             {
+                
                 e.printStackTrace();
             }
 
