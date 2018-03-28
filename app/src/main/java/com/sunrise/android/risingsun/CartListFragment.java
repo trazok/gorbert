@@ -113,7 +113,7 @@ public class CartListFragment extends Fragment
             }
         });
         mTotalCostView = (TextView) view.findViewById(R.id.order_total_view);
-        mTotalCostView.setText("$" + ShoppingCart.getInstance().total());
+        mTotalCostView.setText(String.format("$%.2f", ShoppingCart.getInstance().total()));
         updateUI();
 
         return view;
@@ -198,7 +198,7 @@ public class CartListFragment extends Fragment
             mTitleTextView.setText(mCoffee.getTitle());
 
             mDescriptionTextView.setText(mCoffee.getDescription());
-            mPriceTextView.setText("" + mCoffee.cost());
+            mPriceTextView.setText(String.format("$%.2f", mCoffee.cost()));
         }
 
         @Override

@@ -136,7 +136,8 @@ public class CoffeeListFragment extends Fragment
             mTitleTextView.setText(mCoffee.getTitle());
 
             mDescriptionTextView.setText(mCoffee.getDescription());
-            mPriceTextView.setText("" + mCoffee.cost());
+            mCoffee.setSize(Coffee.SMALL);
+            mPriceTextView.setText(String.format("$%.2f", mCoffee.cost()));
         }
 
         @Override
