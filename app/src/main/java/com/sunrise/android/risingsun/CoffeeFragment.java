@@ -72,6 +72,32 @@ public class CoffeeFragment extends Fragment
     }
 
 
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater)
+    {
+        super.onCreateOptionsMenu(menu, inflater);
+        inflater.inflate(R.menu.item_view_menu, menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        switch (item.getItemId())
+        {
+            case R.id.cart_menu:
+                Intent cart_intent = new Intent(getActivity(), ShoppingCartActivity.class);
+                startActivity(cart_intent);
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+
+
+    }
+
+
+
 
     @Override
     public void onPause()
