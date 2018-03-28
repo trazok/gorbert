@@ -14,7 +14,7 @@ public class FavoriteListActivity extends SingleFragmentActivity
     {
 
 
-        return new CoffeeListFragment();
+        return new FavoriteListFragment();
 
     }
 
