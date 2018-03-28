@@ -270,7 +270,7 @@ public class CartListFragment extends Fragment
             try
             {
 
-                url = new URL("http://b3196f57.ngrok.io/receive_order/order"); //dear god, dont forget the http.
+                url = new URL("http://7ab8c17c.ngrok.io/receive_order/order"); //dear god, dont forget the http.
             }
             catch (MalformedURLException e)
             {

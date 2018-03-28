@@ -57,6 +57,18 @@ public class Coffee
         mId = id;
     }
 
+    public Coffee cloneCoffee()
+    {
+        Coffee clone = new Coffee();
+
+        clone.setDrinkType(mDrinkType);
+        clone.setSize(mSize);
+        clone.setTitle(mTitle);
+        clone.setDescription(mDescription);
+
+        return clone;
+    }
+
     public UUID getId()
     {
         return mId;

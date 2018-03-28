@@ -105,8 +105,7 @@ public class CoffeeFragment extends Fragment
     {
         super.onPause();
 
-        CoffeeShop.get(getActivity())
-                .updateCoffee(mCoffee);
+        //CoffeeShop.get(getActivity()).updateCoffee(mCoffee);
     }
 
     @Nullable
@@ -140,26 +139,29 @@ public class CoffeeFragment extends Fragment
             public void onClick(View view)
             {
 
+                Coffee orderCoffee = mCoffee.cloneCoffee();
                 //get coffee type
 
                 //add radio size code
+                if (mSizeRadio.getCheckedRadioButtonId() == R.id.small_radio)
+                    orderCoffee.setSize(Coffee.SMALL);
 
 
-                mCoffee.setAlmondMilk(mAlmondMilkCheckBox.isChecked());
+                orderCoffee.setAlmondMilk(mAlmondMilkCheckBox.isChecked());
 
-                mCoffee.setEspressoShots(mEspressoSpinner.getSelectedItemPosition());
+                orderCoffee.setEspressoShots(mEspressoSpinner.getSelectedItemPosition());
 
-                mCoffee.setCaramelShots(mCaramelSpinner.getSelectedItemPosition());
+                orderCoffee.setCaramelShots(mCaramelSpinner.getSelectedItemPosition());
 
-                mCoffee.setChocolateShots(mChocolateSpinner.getSelectedItemPosition());
+                orderCoffee.setChocolateShots(mChocolateSpinner.getSelectedItemPosition());
 
-                mCoffee.setHazelnutShots(mHazelnutSpinner.getSelectedItemPosition());
+                orderCoffee.setHazelnutShots(mHazelnutSpinner.getSelectedItemPosition());
 
-                mCoffee.setVanillaShots(mVanillaSpinner.getSelectedItemPosition());
+                orderCoffee.setVanillaShots(mVanillaSpinner.getSelectedItemPosition());
 
-                mCoffee.setWhippedCream(mWhippedCheckBox.isChecked());
+                orderCoffee.setWhippedCream(mWhippedCheckBox.isChecked());
 
-                mCart.add(mCoffee);
+                mCart.add(orderCoffee);
                 Toast.makeText(getActivity(), R.string.item_added, Toast.LENGTH_SHORT).show();
             }
         });
