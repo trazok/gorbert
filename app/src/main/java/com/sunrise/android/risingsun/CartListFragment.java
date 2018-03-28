@@ -266,8 +266,8 @@ public class CartListFragment extends Fragment
             }
 
             String charset = "UTF-8";
-            String param1 = "black";
-            String param2 = "coffee";
+            String param1 = "";
+            String param2 = "";
 
             String query = null;
             try
