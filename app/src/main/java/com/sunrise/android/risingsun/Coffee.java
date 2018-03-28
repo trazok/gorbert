@@ -125,19 +125,19 @@ public class Coffee
         {
             case 0: orderSummary += "ERROR, TEA CASE";
                 break;
-            case 1: orderSummary += "Columbian;";
+            case 1: orderSummary += "Columbian";
                 break;
-            case 2: orderSummary += "Sulawesi;";
+            case 2: orderSummary += "Sulawesi";
                 break;
-            case 3: orderSummary += "latte;";
+            case 3: orderSummary += "latte";
                 break;
-            case 4: orderSummary += "cappuccino;";
+            case 4: orderSummary += "cappuccino";
                 break;
-            case 5: orderSummary += "hot chocolate;";
+            case 5: orderSummary += "hot chocolate";
                 break;
-            case 6: orderSummary += "chai latte;";
+            case 6: orderSummary += "chai latte";
                 break;
-            case 7: orderSummary += "americano;";
+            case 7: orderSummary += "americano";
                 break;
             default: orderSummary += "ERROR, DEFAULT CASE";
                 break;
@@ -146,18 +146,17 @@ public class Coffee
         if (mAlmondMilk)
             orderSummary += " almond milk";
         if (mEspressoShots > 0)
-            orderSummary += " " + mEspressoShots + "espresso;";
+            orderSummary += ", " + mEspressoShots + " espresso";
         if (mVanillaShots > 0)
-            orderSummary += " " + mVanillaShots + "vanilla;";
+            orderSummary += ", " + mVanillaShots + " vanilla";
         if (mChocolateShots > 0)
-            orderSummary += " " + mChocolateShots + "chocolate;";
+            orderSummary += ", " + mChocolateShots + " chocolate";
         if (mHazelnutShots > 0)
-            orderSummary += " " + mHazelnutShots + "hazelnut;";
+            orderSummary += ", " + mHazelnutShots + " hazelnut";
         if (mCaramelShots > 0)
-            orderSummary += " " + mCaramelShots + "caramel;";
+            orderSummary += ", " + mCaramelShots + " caramel";
         if (mWhippedCream)
-            orderSummary += " " + mWhippedCream + "whipped cream;";
-
+            orderSummary += ", whipped cream";
 
 
         return orderSummary;
