@@ -60,6 +60,24 @@ public class ShoppingCart
         return null;
     }
 
+    public void updateCartItem(Coffee coffee)
+    {
+        for(Coffee element:order)
+        {
+            if (coffee.getId() == element.getId())
+            {
+                element.setSize(coffee.getSize());
+                element.setAlmondMilk(coffee.getAlmondMilk());
+                element.setWhippedCream(coffee.getWhippedCream());
+                element.setEspressoShots(coffee.getEspressoShots());
+                element.setCaramelShots(coffee.getCaramelShots());
+                element.setChocolateShots(coffee.getChocolateShots());
+                element.setHazelnutShots(coffee.getHazelnutShots());
+                element.setVanillaShots(coffee.getVanillaShots());
+            }
+        }
+    }
+
     public double total()
     {
         double total = 0;

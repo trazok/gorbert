@@ -145,7 +145,8 @@ public class CoffeeFragment extends Fragment
                 //add radio size code
                 if (mSizeRadio.getCheckedRadioButtonId() == R.id.large_radio)
                     orderCoffee.setSize(Coffee.LARGE);
-
+                else
+                    orderCoffee.setSize(Coffee.SMALL);
 
                 orderCoffee.setAlmondMilk(mAlmondMilkCheckBox.isChecked());
 

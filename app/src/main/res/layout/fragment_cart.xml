@@ -191,7 +191,7 @@
         android:id="@+id/size_radio_group"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:checkedButton="@+id/large_radio"
+        android:checkedButton="@+id/small_radio"
         android:orientation="horizontal"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/coffee_description_view"

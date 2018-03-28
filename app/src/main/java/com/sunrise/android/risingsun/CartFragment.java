@@ -71,6 +71,29 @@ public class CartFragment extends Fragment
     {
         super.onPause();
 
+        //save changes
+        if (mSizeRadio.getCheckedRadioButtonId() == R.id.large_radio)
+            mCoffee.setSize(Coffee.LARGE);
+        else
+            mCoffee.setSize(Coffee.SMALL);
+
+        mCoffee.setAlmondMilk(mAlmondMilkCheckBox.isChecked());
+
+        mCoffee.setEspressoShots(mEspressoSpinner.getSelectedItemPosition());
+
+        mCoffee.setCaramelShots(mCaramelSpinner.getSelectedItemPosition());
+
+        mCoffee.setChocolateShots(mChocolateSpinner.getSelectedItemPosition());
+
+        mCoffee.setHazelnutShots(mHazelnutSpinner.getSelectedItemPosition());
+
+        mCoffee.setVanillaShots(mVanillaSpinner.getSelectedItemPosition());
+
+        mCoffee.setWhippedCream(mWhippedCheckBox.isChecked());
+
+
+        mCart.updateCartItem(mCoffee);
+
 
     }
 
@@ -87,17 +110,29 @@ public class CartFragment extends Fragment
         mDescriptionField.setText(mCoffee.getDescription());
 
         mSizeRadio = (RadioGroup) v.findViewById(R.id.size_radio_group);
+        if (mCoffee.getSize() == Coffee.LARGE)
+        mSizeRadio.check(R.id.large_radio);
 
         mWhippedCheckBox = (CheckBox) v.findViewById(R.id.coffee_whipped);
+        mWhippedCheckBox.setChecked(mCoffee.getWhippedCream());
+
         mAlmondMilkCheckBox = (CheckBox) v.findViewById(R.id.almond_milk_checkbox);
+        mAlmondMilkCheckBox.setChecked(mCoffee.getAlmondMilk());
 
         mEspressoSpinner = (Spinner) v.findViewById(R.id.espresso_shots_spinner);
-
+        mEspressoSpinner.setSelection(mCoffee.getEspressoShots());
 
         mCaramelSpinner = (Spinner) v.findViewById(R.id.caramel_shots_spinner);
+        mCaramelSpinner.setSelection(mCoffee.getCaramelShots());
+
         mHazelnutSpinner = (Spinner) v.findViewById(R.id.hazelnut_shots_spinner);
+        mHazelnutSpinner.setSelection(mCoffee.getHazelnutShots());
+
         mChocolateSpinner = (Spinner) v.findViewById(R.id.chocolate_shots_spinner);
+        mChocolateSpinner.setSelection(mCoffee.getChocolateShots());
+
         mVanillaSpinner = (Spinner) v.findViewById(R.id.vanilla_shots_spinner);
+        mVanillaSpinner.setSelection(mCoffee.getVanillaShots());
 
         mRemoveFromCart = (Button) v.findViewById(R.id.remove_button);
         mRemoveFromCart.setOnClickListener(new View.OnClickListener()
