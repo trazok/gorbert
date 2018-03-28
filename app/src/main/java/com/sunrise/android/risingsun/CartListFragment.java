@@ -35,6 +35,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.net.URLEncoder;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -61,8 +62,16 @@ public class CartListFragment extends Fragment
 
     public void placeOrder() throws Exception
     {
+        String order = "";
+        ArrayList<Coffee> orderList = (ArrayList<Coffee>) ShoppingCart.getInstance().getOrder();
 
-        new PlaceOrderTask("black coffee").execute();
+        for(int i = 0; i < orderList.size(); i++)
+        {
+            order += orderList.get(i).toString() + "; ";
+        }
+
+
+        new PlaceOrderTask(order).execute();
 
         //if (response == con.HTTP_OK)
         Toast.makeText(getActivity(), R.string.order_placed, Toast.LENGTH_SHORT).show();
@@ -240,8 +249,8 @@ public class CartListFragment extends Fragment
 
     private class PlaceOrderTask extends AsyncTask<String, Void, Integer>
     {
-        private String mOrder = "default test order";
-
+        private String mOrder = "error/default order";
+        List<Coffee> orderList = ShoppingCart.getInstance().getOrder();
 
 
         public PlaceOrderTask(String order)
@@ -254,6 +263,9 @@ public class CartListFragment extends Fragment
         @Override
         protected Integer doInBackground(String... order)
         {
+
+
+
             URL url = null;
             try
             {
@@ -266,7 +278,7 @@ public class CartListFragment extends Fragment
             }
 
             String charset = "UTF-8";
-            String param1 = "";
+            String param1 = mOrder;
             String param2 = "";
 
             String query = null;

@@ -189,7 +189,7 @@ public class CoffeeShop
         values.put(CoffeeTable.Cols.UUID, coffee.getId().toString());
         values.put(CoffeeTable.Cols.TITLE, coffee.getTitle());
         values.put(CoffeeTable.Cols.DESCRIPTION, coffee.getDescription());
-        //values.put(CoffeeTable.Cols.ORDER, coffee.getOrder());
+        values.put(CoffeeTable.Cols.TYPE, coffee.getDrinkType());
         values.put(CoffeeTable.Cols.FAVORITED, coffee.isFavorited() ? 1 : 0);
 
         return values;

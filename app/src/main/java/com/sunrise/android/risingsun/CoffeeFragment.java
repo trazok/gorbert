@@ -139,7 +139,12 @@ public class CoffeeFragment extends Fragment
             @Override
             public void onClick(View view)
             {
+
+                //get coffee type
+
                 //add radio size code
+
+
                 mCoffee.setAlmondMilk(mAlmondMilkCheckBox.isChecked());
 
                 mCoffee.setEspressoShots(mEspressoSpinner.getSelectedItemPosition());

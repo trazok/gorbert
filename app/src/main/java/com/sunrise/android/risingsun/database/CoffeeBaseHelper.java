@@ -28,7 +28,7 @@ public class CoffeeBaseHelper extends SQLiteOpenHelper
                 CoffeeTable.Cols.UUID + ", " +
                 CoffeeTable.Cols.TITLE + ", " +
                 CoffeeTable.Cols.DESCRIPTION + ", " +
-                //CoffeeTable.Cols.CORDER + ", " +
+                CoffeeTable.Cols.TYPE + ", " +
                 CoffeeTable.Cols.FAVORITED +
                 ") "
         );
