@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -41,6 +42,7 @@ public class CoffeeFragment extends Fragment
     private Spinner mVanillaSpinner;
     private Button mAddToCart;
     private RadioGroup mSizeRadio;
+    private EditText mSpecialInstructionsEditText;
 
     ShoppingCart mCart = ShoppingCart.getInstance();
 
@@ -114,10 +116,14 @@ public class CoffeeFragment extends Fragment
     {
         View v = inflater.inflate(R.layout.fragment_coffee, container, false);
 
+
+
         mTitleField = (TextView) v.findViewById(R.id.coffee_title_view);
         mDescriptionField = (TextView) v.findViewById(R.id.coffee_description_view);
         mTitleField.setText(mCoffee.getTitle());
         mDescriptionField.setText(mCoffee.getDescription());
+
+        mSpecialInstructionsEditText = (EditText) v.findViewById(R.id.instructions_edit_text);
 
         mSizeRadio = (RadioGroup) v.findViewById(R.id.size_radio_group);
 
@@ -161,6 +167,8 @@ public class CoffeeFragment extends Fragment
                 orderCoffee.setVanillaShots(mVanillaSpinner.getSelectedItemPosition());
 
                 orderCoffee.setWhippedCream(mWhippedCheckBox.isChecked());
+
+                orderCoffee.setSpecialInstructions(mSpecialInstructionsEditText.getText().toString());
 
                 mCart.add(orderCoffee);
                 Toast.makeText(getActivity(), R.string.item_added, Toast.LENGTH_SHORT).show();

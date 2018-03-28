@@ -36,6 +36,7 @@ public class Coffee
     protected boolean mAlmondMilk;
     protected boolean isFavorited;
 
+    protected String mSpecialInstructions = null;
     protected String mTitle = "Default Coffee";
     protected String mDescription = "Unknown Beverage";
     private UUID mId;
@@ -82,6 +83,16 @@ public class Coffee
     public void setFavorited(boolean favorite)
     {
         isFavorited = favorite;
+    }
+
+    public String getSpecialInstructions()
+    {
+        return mSpecialInstructions;
+    }
+
+    public void setSpecialInstructions(String instructions)
+    {
+        mSpecialInstructions = instructions;
     }
 
     public String getTitle()

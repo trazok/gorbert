@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -36,6 +37,7 @@ public class CartFragment extends Fragment
     private Spinner mVanillaSpinner;
     private Button mRemoveFromCart;
     private RadioGroup mSizeRadio;
+    private EditText mSpecialInstructionEditText;
 
     ShoppingCart mCart = ShoppingCart.getInstance();
 
@@ -108,6 +110,10 @@ public class CartFragment extends Fragment
         mDescriptionField = (TextView) v.findViewById(R.id.coffee_description_view);
         mTitleField.setText(mCoffee.getTitle());
         mDescriptionField.setText(mCoffee.getDescription());
+
+        mSpecialInstructionEditText = (EditText) v.findViewById(R.id.instructions_edit_text);
+        if (mCoffee.getSpecialInstructions() != null)
+        mSpecialInstructionEditText.setText(mCoffee.getSpecialInstructions());
 
         mSizeRadio = (RadioGroup) v.findViewById(R.id.size_radio_group);
         if (mCoffee.getSize() == Coffee.LARGE)
