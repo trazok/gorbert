@@ -76,6 +76,14 @@ public class FavoriteList
         return coffees;
     }
 
+    public void remove(UUID id)
+    {
+        String table = FavoritedDbSchema.FavoriteTable.NAME;
+        String whereClause = "_id=?";
+        String[] whereArgs = new String[] { String.valueOf(id) };
+        mDatabase.delete(table, whereClause, whereArgs);
+    }
+
     public Coffee getCoffee(UUID id)
     {
         FavoriteCursorWrapper cursor = queryCoffees(

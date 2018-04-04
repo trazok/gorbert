@@ -18,6 +18,8 @@
     <string name="add_to_cart_button_label">Add to cart</string>
     <string name="special_instructions_text">Special Instructions</string>
     <string name="save_as_favorite_button_label">Save Favorite</string>
+    <string name="remove_from_favorites_button_label">Remove</string>
+    <string name="favorite_removed">Removed from favorites!</string>
 
     <string name="shopping_cart">Shopping Cart</string>
     <string name="coffee_menu">Menu</string>

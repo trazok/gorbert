@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -35,8 +36,10 @@ public class FavoriteFragment extends Fragment
     private Spinner mChocolateSpinner;
     private Spinner mHazelnutSpinner;
     private Spinner mVanillaSpinner;
-    private Button mAddToCart;
+    private Button mRemoveFromFavorites;
     private RadioGroup mSizeRadio;
+    private EditText mSpecialInstructionEditText;
+    private Button mAddToCart;
 
     ShoppingCart mCart = ShoppingCart.getInstance();
 
@@ -80,36 +83,46 @@ public class FavoriteFragment extends Fragment
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
     {
-        View v = inflater.inflate(R.layout.fragment_favorite, container, false);
+        View v = inflater.inflate(R.layout.fragment_cart, container, false);
+
 
         mTitleField = (TextView) v.findViewById(R.id.coffee_title_view);
         mDescriptionField = (TextView) v.findViewById(R.id.coffee_description_view);
         mTitleField.setText(mCoffee.getTitle());
         mDescriptionField.setText(mCoffee.getDescription());
 
+        mSpecialInstructionEditText = (EditText) v.findViewById(R.id.instructions_edit_text);
+        if (mCoffee.getSpecialInstructions() != null)
+            mSpecialInstructionEditText.setText(mCoffee.getSpecialInstructions());
+
         mSizeRadio = (RadioGroup) v.findViewById(R.id.size_radio_group);
+        if (mCoffee.getSize() == Coffee.LARGE)
+            mSizeRadio.check(R.id.large_radio);
 
         mWhippedCheckBox = (CheckBox) v.findViewById(R.id.coffee_whipped);
+        mWhippedCheckBox.setChecked(mCoffee.getWhippedCream());
+
         mAlmondMilkCheckBox = (CheckBox) v.findViewById(R.id.almond_milk_checkbox);
+        mAlmondMilkCheckBox.setChecked(mCoffee.getAlmondMilk());
 
         mEspressoSpinner = (Spinner) v.findViewById(R.id.espresso_shots_spinner);
-
+        mEspressoSpinner.setSelection(mCoffee.getEspressoShots());
 
         mCaramelSpinner = (Spinner) v.findViewById(R.id.caramel_shots_spinner);
-        mHazelnutSpinner = (Spinner) v.findViewById(R.id.hazelnut_shots_spinner);
-        mChocolateSpinner = (Spinner) v.findViewById(R.id.chocolate_shots_spinner);
-        mVanillaSpinner = (Spinner) v.findViewById(R.id.vanilla_shots_spinner);
+        mCaramelSpinner.setSelection(mCoffee.getCaramelShots());
 
-        mAddToCart = (Button) v.findViewById(R.id.add_to_cart_button);
-        mAddToCart.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View view)
-            {
-                //add radio size code
-                Toast.makeText(getActivity(), R.string.item_added, Toast.LENGTH_SHORT).show();
-            }
-        });
+        mHazelnutSpinner = (Spinner) v.findViewById(R.id.hazelnut_shots_spinner);
+        mHazelnutSpinner.setSelection(mCoffee.getHazelnutShots());
+
+        mChocolateSpinner = (Spinner) v.findViewById(R.id.chocolate_shots_spinner);
+        mChocolateSpinner.setSelection(mCoffee.getChocolateShots());
+
+        mVanillaSpinner = (Spinner) v.findViewById(R.id.vanilla_shots_spinner);
+        mVanillaSpinner.setSelection(mCoffee.getVanillaShots());
+
+
+
+
 
         return v;
     }
