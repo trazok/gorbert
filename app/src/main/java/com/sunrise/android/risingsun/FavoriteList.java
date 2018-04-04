@@ -129,6 +129,20 @@ public class FavoriteList
         values.put(FavoritedDbSchema.FavoriteTable.Cols.UUID, coffee.getId().toString());
         values.put(FavoritedDbSchema.FavoriteTable.Cols.TITLE, coffee.getTitle());
         values.put(FavoritedDbSchema.FavoriteTable.Cols.DESCRIPTION, coffee.getDescription());
+        values.put(FavoritedDbSchema.FavoriteTable.Cols.ALMONDMILK, coffee.getAlmondMilk());
+        values.put(FavoritedDbSchema.FavoriteTable.Cols.SIZE, coffee.getSize());
+        values.put(FavoritedDbSchema.FavoriteTable.Cols.ESPRESSO, coffee.getEspressoShots());
+        values.put(FavoritedDbSchema.FavoriteTable.Cols.CARAMEL, coffee.getCaramelShots());
+        values.put(FavoritedDbSchema.FavoriteTable.Cols.CHOCOLATE, coffee.getChocolateShots());
+        values.put(FavoritedDbSchema.FavoriteTable.Cols.HAZELNUT, coffee.getHazelnutShots());
+        values.put(FavoritedDbSchema.FavoriteTable.Cols.VANILLA, coffee.getVanillaShots());
+        values.put(FavoritedDbSchema.FavoriteTable.Cols.WHIPPED, coffee.getWhippedCream());
+        values.put(FavoritedDbSchema.FavoriteTable.Cols.INSTRUCTIONS, coffee.getSpecialInstructions());
+        values.put(FavoritedDbSchema.FavoriteTable.Cols.TYPE, coffee.getDrinkType());
+        values.put(FavoritedDbSchema.FavoriteTable.Cols.FAVORITED, true);
+
+
+
         //values.put(CoffeeTable.Cols.ORDER, coffee.getOrder());
 
         return values;
