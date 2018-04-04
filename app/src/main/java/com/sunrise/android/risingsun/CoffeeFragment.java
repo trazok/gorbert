@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -43,7 +44,7 @@ public class CoffeeFragment extends Fragment
     private Button mAddToCart;
     private RadioGroup mSizeRadio;
     private EditText mSpecialInstructionsEditText;
-    private Button mSaveAsFavorite;
+    private ImageButton mSaveAsFavorite;
 
     ShoppingCart mCart = ShoppingCart.getInstance();
 
@@ -176,7 +177,7 @@ public class CoffeeFragment extends Fragment
             }
         });
 
-        mSaveAsFavorite = (Button) v.findViewById(R.id.save_as_favorite_button);
+        mSaveAsFavorite = (ImageButton) v.findViewById(R.id.save_as_favorite_button);
         mSaveAsFavorite.setOnClickListener(new View.OnClickListener()
         {
             @Override
