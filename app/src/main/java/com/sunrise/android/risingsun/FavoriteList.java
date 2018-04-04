@@ -78,10 +78,9 @@ public class FavoriteList
 
     public void remove(UUID id)
     {
-        String table = FavoritedDbSchema.FavoriteTable.NAME;
-        String whereClause = "_id=?";
-        String[] whereArgs = new String[] { String.valueOf(id) };
-        mDatabase.delete(table, whereClause, whereArgs);
+        //mDatabase.insert(FavoritedDbSchema.FavoriteTable.NAME, null, values);
+        mDatabase.delete(FavoritedDbSchema.FavoriteTable.NAME, FavoritedDbSchema.FavoriteTable.Cols.UUID + " = ?",
+                new String[] {id.toString()});
     }
 
     public Coffee getCoffee(UUID id)
