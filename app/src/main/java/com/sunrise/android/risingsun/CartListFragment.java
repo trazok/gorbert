@@ -143,6 +143,10 @@ public class CartListFragment extends Fragment
             case R.id.cart_menu:
                 return true;
 
+            case R.id.favorited_menu:
+                Intent favorite_intent = new Intent(getActivity(), FavoriteListActivity.class);
+                startActivity(favorite_intent);
+                return true;
 
             case R.id.coffee_menu:
                 Intent menu_intent = new Intent(getActivity(), CoffeeListActivity.class);

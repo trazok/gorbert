@@ -43,6 +43,7 @@ public class CoffeeFragment extends Fragment
     private Button mAddToCart;
     private RadioGroup mSizeRadio;
     private EditText mSpecialInstructionsEditText;
+    private Button mSaveAsFavorite;
 
     ShoppingCart mCart = ShoppingCart.getInstance();
 
@@ -172,6 +173,16 @@ public class CoffeeFragment extends Fragment
 
                 mCart.add(orderCoffee);
                 Toast.makeText(getActivity(), R.string.item_added, Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        mSaveAsFavorite = (Button) v.findViewById(R.id.save_as_favorite_button);
+        mSaveAsFavorite.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+
             }
         });
 
