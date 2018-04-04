@@ -98,6 +98,8 @@ public class FavoriteFragment extends Fragment
         mSizeRadio = (RadioGroup) v.findViewById(R.id.size_radio_group);
         if (mCoffee.getSize() == Coffee.LARGE)
             mSizeRadio.check(R.id.large_radio);
+        else
+            mSizeRadio.check(R.id.small_radio);
 
         mWhippedCheckBox = (CheckBox) v.findViewById(R.id.coffee_whipped);
         mWhippedCheckBox.setChecked(mCoffee.getWhippedCream());
