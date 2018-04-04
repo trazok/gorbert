@@ -135,7 +135,7 @@ public class FavoriteListFragment extends Fragment
             mTitleTextView.setText(mCoffee.getTitle());
 
             mSummaryTextView.setText(mCoffee.toString());
-            mPriceTextView.setText("" + mCoffee.cost());
+            mPriceTextView.setText(String.format("$%.2f", mCoffee.cost()));
         }
 
         @Override

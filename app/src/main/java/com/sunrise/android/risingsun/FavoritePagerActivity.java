@@ -27,7 +27,7 @@ public class FavoritePagerActivity extends AppCompatActivity
 
     public static Intent newIntent(Context packageContext, UUID coffeeId)
     {
-        Intent intent = new Intent(packageContext, CoffeePagerActivity.class);
+        Intent intent = new Intent(packageContext, FavoritePagerActivity.class);
         intent.putExtra(EXTRA_COFFEE_ID, coffeeId);
 
         return intent;
@@ -43,7 +43,7 @@ public class FavoritePagerActivity extends AppCompatActivity
 
         mViewPager = (ViewPager) findViewById(R.id.favorite_view_pager);
 
-        mCoffees = CoffeeShop.get(this).getCoffees();
+        mCoffees = FavoriteList.get(this).getCoffees();
         FragmentManager fragmentManager = getSupportFragmentManager();
         mViewPager.setAdapter(new FragmentStatePagerAdapter(fragmentManager)
         {
@@ -52,7 +52,7 @@ public class FavoritePagerActivity extends AppCompatActivity
             {
                 Coffee coffee = mCoffees.get(position);
 
-                return CoffeeFragment.newInstance(coffee.getId());
+                return FavoriteFragment.newInstance(coffee.getId());
             }
 
             @Override
