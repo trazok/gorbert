@@ -1,0 +1,30 @@
+Feb 18, 2018 1:44:45 PM SimpleLog log
+INFO: black
+Feb 18, 2018 1:44:54 PM SimpleLog log
+INFO: black
+Feb 18, 2018 1:44:57 PM SimpleLog log
+INFO: black
+Mar 28, 2018 12:39:31 PM SimpleLog log
+INFO: param1=black&param2=coffee
+Mar 28, 2018 1:09:24 PM SimpleLog log
+INFO: black
+Mar 28, 2018 1:09:47 PM SimpleLog log
+INFO: black
+Mar 28, 2018 1:39:36 PM SimpleLog log
+INFO: black coffee
+Mar 28, 2018 2:06:07 PM SimpleLog log
+INFO: Small ERROR, TEA CASE; 
+Mar 28, 2018 2:25:21 PM SimpleLog log
+INFO: Large ERROR, TEA CASE; 
+Mar 28, 2018 2:56:57 PM SimpleLog log
+INFO: Large chai latte;; 
+Mar 28, 2018 2:57:45 PM SimpleLog log
+INFO: Large chai latte;; Large cappuccino;; Large Sulawesi; 2vanilla; 4chocolate; truewhipped cream;; 
+Mar 28, 2018 3:01:42 PM SimpleLog log
+INFO: Large hot chocolate, 2 vanilla, true whipped cream;; Large americano;; 
+Mar 28, 2018 3:03:31 PM SimpleLog log
+INFO: Large Sulawesi, 2 hazelnut; Large Sulawesi, 2 hazelnut; Large cappuccino almond milk, whipped cream; 
+Mar 28, 2018 3:45:30 PM SimpleLog log
+INFO: Small hot chocolate; Large hot chocolate almond milk, 3 hazelnut, 4 caramel; 
+Mar 28, 2018 4:55:31 PM SimpleLog log
+INFO: Large Sulawesi; 
