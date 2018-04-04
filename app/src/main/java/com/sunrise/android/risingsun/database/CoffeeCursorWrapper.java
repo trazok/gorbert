@@ -33,7 +33,7 @@ public class CoffeeCursorWrapper extends CursorWrapper
         //coffee.setOrder(corder);
         coffee.setDescription(description);
         coffee.setFavorited(isFavorited != 0);
-        coffee.setSize(Coffee.LARGE);
+        coffee.setSize(Coffee.SMALL);
         coffee.setDrinkType(coffeeType);
 
         return coffee;

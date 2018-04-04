@@ -5,9 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.sunrise.android.risingsun.database.CoffeeBaseHelper;
-import com.sunrise.android.risingsun.database.CoffeeCursorWrapper;
-import com.sunrise.android.risingsun.database.CoffeeDbSchema;
+import com.sunrise.android.risingsun.favoritedb.*;
 import com.sunrise.android.risingsun.favoritedb.FavoriteCursorWrapper;
 import com.sunrise.android.risingsun.favoritedb.FavoritedBaseHelper;
 import com.sunrise.android.risingsun.favoritedb.FavoritedDbSchema;

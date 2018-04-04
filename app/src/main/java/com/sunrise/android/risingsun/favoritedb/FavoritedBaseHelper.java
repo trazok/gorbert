@@ -5,8 +5,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import com.sunrise.android.risingsun.FavoriteList;
-import com.sunrise.android.risingsun.favoritedb.FavoritedDbSchema;
-
+import com.sunrise.android.risingsun.favoritedb.FavoritedDbSchema.FavoriteTable;
 /**
  * Created by dell on 12/14/2017.
  */
@@ -25,13 +24,13 @@ public class FavoritedBaseHelper extends SQLiteOpenHelper
     @Override
     public void onCreate(SQLiteDatabase db)
     {
-        db.execSQL("create table " + FavoriteList.NAME + "(" +
+        db.execSQL("create table " + FavoriteTable.NAME + "(" +
                 " _id integer primary key autoincrement, " +
-                FavoriteList.Cols.UUID + ", " +
-                FavoriteList.Cols.TITLE + ", " +
-                FavoriteList.Cols.DESCRIPTION + ", " +
-                FavoriteList.Cols.TYPE + ", " +
-                FavoriteList.Cols.FAVORITED +
+                FavoriteTable.Cols.UUID + ", " +
+                FavoriteTable.Cols.TITLE + ", " +
+                FavoriteTable.Cols.DESCRIPTION + ", " +
+                FavoriteTable.Cols.TYPE + ", " +
+                FavoriteTable.Cols.FAVORITED +
                 ") "
         );
     }
