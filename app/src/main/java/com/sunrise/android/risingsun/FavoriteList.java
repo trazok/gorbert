@@ -41,7 +41,7 @@ public class FavoriteList
 
     private FavoriteList(Context context)
     {
-        
+
         mContext = context.getApplicationContext();
         mDatabase = new FavoritedBaseHelper(mContext)
                 .getWritableDatabase();

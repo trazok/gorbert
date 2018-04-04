@@ -4,7 +4,8 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.sunrise.android.risingsun.database.CoffeeDbSchema;
+import com.sunrise.android.risingsun.FavoriteList;
+import com.sunrise.android.risingsun.favoritedb.FavoritedDbSchema;
 
 /**
  * Created by dell on 12/14/2017.
@@ -24,12 +25,13 @@ public class FavoritedBaseHelper extends SQLiteOpenHelper
     @Override
     public void onCreate(SQLiteDatabase db)
     {
-        db.execSQL("create table " + CoffeeDbSchema.CoffeeTable.NAME + "(" +
+        db.execSQL("create table " + FavoriteList.NAME + "(" +
                 " _id integer primary key autoincrement, " +
-                CoffeeDbSchema.CoffeeTable.Cols.UUID + ", " +
-                CoffeeDbSchema.CoffeeTable.Cols.TITLE + ", " +
-                CoffeeDbSchema.CoffeeTable.Cols.DESCRIPTION + ", " +
-                //CoffeeTable.Cols.CORDER + ", " +
+                FavoriteList.Cols.UUID + ", " +
+                FavoriteList.Cols.TITLE + ", " +
+                FavoriteList.Cols.DESCRIPTION + ", " +
+                FavoriteList.Cols.TYPE + ", " +
+                FavoriteList.Cols.FAVORITED +
                 ") "
         );
     }

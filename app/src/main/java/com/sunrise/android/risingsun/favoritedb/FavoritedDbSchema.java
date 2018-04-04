@@ -18,6 +18,8 @@ public class FavoritedDbSchema
             public static final String TITLE = "title";
             public static final String DESCRIPTION = "desciption";
             // public static final String CORDER = "corder";
+            public static final String FAVORITED = "favorited";
+            public static final String TYPE = "type";
 
         }
     }
