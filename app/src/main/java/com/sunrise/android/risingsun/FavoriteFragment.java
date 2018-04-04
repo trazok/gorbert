@@ -36,10 +36,10 @@ public class FavoriteFragment extends Fragment
     private Spinner mChocolateSpinner;
     private Spinner mHazelnutSpinner;
     private Spinner mVanillaSpinner;
-    private Button mRemoveFromFavorites;
+    private Button mRemoveFromFavoritesButton;
     private RadioGroup mSizeRadio;
-    private EditText mSpecialInstructionEditText;
-    private Button mAddToCart;
+    private EditText mSpecialInstructionsEditText;
+    private Button mAddToCartButton;
 
     ShoppingCart mCart = ShoppingCart.getInstance();
 
@@ -83,7 +83,7 @@ public class FavoriteFragment extends Fragment
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
     {
-        View v = inflater.inflate(R.layout.fragment_cart, container, false);
+        View v = inflater.inflate(R.layout.fragment_favorite, container, false);
 
 
         mTitleField = (TextView) v.findViewById(R.id.coffee_title_view);
@@ -91,9 +91,9 @@ public class FavoriteFragment extends Fragment
         mTitleField.setText(mCoffee.getTitle());
         mDescriptionField.setText(mCoffee.getDescription());
 
-        mSpecialInstructionEditText = (EditText) v.findViewById(R.id.instructions_edit_text);
+        mSpecialInstructionsEditText = (EditText) v.findViewById(R.id.instructions_edit_text);
         if (mCoffee.getSpecialInstructions() != null)
-            mSpecialInstructionEditText.setText(mCoffee.getSpecialInstructions());
+            mSpecialInstructionsEditText.setText(mCoffee.getSpecialInstructions());
 
         mSizeRadio = (RadioGroup) v.findViewById(R.id.size_radio_group);
         if (mCoffee.getSize() == Coffee.LARGE)
@@ -120,9 +120,50 @@ public class FavoriteFragment extends Fragment
         mVanillaSpinner = (Spinner) v.findViewById(R.id.vanilla_shots_spinner);
         mVanillaSpinner.setSelection(mCoffee.getVanillaShots());
 
+        mRemoveFromFavoritesButton = (Button) v.findViewById(R.id.remove_from_favorites_button);
+        mRemoveFromFavoritesButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FavoriteList.get(getActivity()).remove(mCoffee.getId());
 
+                Toast.makeText(getActivity(), R.string.favorite_removed, Toast.LENGTH_SHORT).show();
+            }
+        });
 
+        mAddToCartButton = (Button) v.findViewById(R.id.add_to_cart_button);
+        mAddToCartButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Coffee orderCoffee = mCoffee.cloneCoffee();
+                //get coffee type
 
+                //add radio size code
+                if (mSizeRadio.getCheckedRadioButtonId() == R.id.large_radio)
+                    orderCoffee.setSize(Coffee.LARGE);
+                else
+                    orderCoffee.setSize(Coffee.SMALL);
+
+                orderCoffee.setAlmondMilk(mAlmondMilkCheckBox.isChecked());
+
+                orderCoffee.setEspressoShots(mEspressoSpinner.getSelectedItemPosition());
+
+                orderCoffee.setCaramelShots(mCaramelSpinner.getSelectedItemPosition());
+
+                orderCoffee.setChocolateShots(mChocolateSpinner.getSelectedItemPosition());
+
+                orderCoffee.setHazelnutShots(mHazelnutSpinner.getSelectedItemPosition());
+
+                orderCoffee.setVanillaShots(mVanillaSpinner.getSelectedItemPosition());
+
+                orderCoffee.setWhippedCream(mWhippedCheckBox.isChecked());
+
+                orderCoffee.setSpecialInstructions(mSpecialInstructionsEditText.getText().toString());
+
+                mCart.add(orderCoffee);
+
+                Toast.makeText(getActivity(), R.string.item_added, Toast.LENGTH_SHORT).show();
+            }
+        });
 
         return v;
     }
