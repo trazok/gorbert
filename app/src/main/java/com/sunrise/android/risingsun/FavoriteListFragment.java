@@ -116,16 +116,16 @@ public class FavoriteListFragment extends Fragment
         private Coffee mCoffee;
 
         private TextView mTitleTextView;
-        private TextView mDescriptionTextView;
+        private TextView mSummaryTextView;
         private TextView mPriceTextView;
 
         public FavoriteHolder(LayoutInflater inflater, ViewGroup parent)
         {
-            super(inflater.inflate(R.layout.list_item_coffee, parent, false));
+            super(inflater.inflate(R.layout.list_item_favorite, parent, false));
             itemView.setOnClickListener(this);
 
             mTitleTextView = (TextView) itemView.findViewById(R.id.coffee_title);
-            mDescriptionTextView = (TextView) itemView.findViewById(R.id.coffee_description);
+            mSummaryTextView = (TextView) itemView.findViewById(R.id.coffee_summary);
             mPriceTextView = (TextView) itemView.findViewById(R.id.coffee_price);
         }
 
@@ -134,7 +134,7 @@ public class FavoriteListFragment extends Fragment
             mCoffee = coffee;
             mTitleTextView.setText(mCoffee.getTitle());
 
-            mDescriptionTextView.setText(mCoffee.getDescription());
+            mSummaryTextView.setText(mCoffee.toString());
             mPriceTextView.setText("" + mCoffee.cost());
         }
 
