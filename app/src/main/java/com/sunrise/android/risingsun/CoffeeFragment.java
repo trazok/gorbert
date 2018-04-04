@@ -46,6 +46,7 @@ public class CoffeeFragment extends Fragment
     private EditText mSpecialInstructionsEditText;
     private ImageButton mSaveAsFavorite;
 
+    FavoriteList mFavoriteList;
     ShoppingCart mCart = ShoppingCart.getInstance();
 
     private int shotCount;
@@ -183,6 +184,34 @@ public class CoffeeFragment extends Fragment
             @Override
             public void onClick(View view)
             {
+                Coffee orderCoffee = mCoffee.cloneCoffee();
+                //get coffee type
+
+                //add radio size code
+                if (mSizeRadio.getCheckedRadioButtonId() == R.id.large_radio)
+                    orderCoffee.setSize(Coffee.LARGE);
+                else
+                    orderCoffee.setSize(Coffee.SMALL);
+
+                orderCoffee.setAlmondMilk(mAlmondMilkCheckBox.isChecked());
+
+                orderCoffee.setEspressoShots(mEspressoSpinner.getSelectedItemPosition());
+
+                orderCoffee.setCaramelShots(mCaramelSpinner.getSelectedItemPosition());
+
+                orderCoffee.setChocolateShots(mChocolateSpinner.getSelectedItemPosition());
+
+                orderCoffee.setHazelnutShots(mHazelnutSpinner.getSelectedItemPosition());
+
+                orderCoffee.setVanillaShots(mVanillaSpinner.getSelectedItemPosition());
+
+                orderCoffee.setWhippedCream(mWhippedCheckBox.isChecked());
+
+                orderCoffee.setSpecialInstructions(mSpecialInstructionsEditText.getText().toString());
+
+                mFavoriteList = FavoriteList.get(getActivity());
+                mFavoriteList.addCoffee(orderCoffee);
+                Toast.makeText(getActivity(), R.string.favorite_saved, Toast.LENGTH_SHORT).show();
 
             }
         });

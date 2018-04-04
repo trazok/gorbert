@@ -28,6 +28,7 @@
     <string name="item_added">Placed in cart!</string>
     <string name="order_placed">Your order will be ready soon!</string>
     <string name="cart_empty">You must add something to the cart first</string>
+    <string name="favorite_saved">Saved to favorites!</string>
 
 
     <string name="sulawesi_title_text">Sulawesi Coffee</string>

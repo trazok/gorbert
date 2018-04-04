@@ -30,6 +30,15 @@ public class FavoritedBaseHelper extends SQLiteOpenHelper
                 FavoriteTable.Cols.TITLE + ", " +
                 FavoriteTable.Cols.DESCRIPTION + ", " +
                 FavoriteTable.Cols.TYPE + ", " +
+                FavoriteTable.Cols.SIZE + ", " +
+                FavoriteTable.Cols.ESPRESSO + ", " +
+                FavoriteTable.Cols.CARAMEL + ", " +
+                FavoriteTable.Cols.CHOCOLATE + ", " +
+                FavoriteTable.Cols.HAZELNUT + ", " +
+                FavoriteTable.Cols.VANILLA + ", " +
+                FavoriteTable.Cols.WHIPPED + ", " +
+                FavoriteTable.Cols.ALMONDMILK + ", " +
+                FavoriteTable.Cols.INSTRUCTIONS + ", " +
                 FavoriteTable.Cols.FAVORITED +
                 ") "
         );

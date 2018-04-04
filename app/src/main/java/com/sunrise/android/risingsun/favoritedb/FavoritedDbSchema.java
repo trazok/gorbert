@@ -20,6 +20,15 @@ public class FavoritedDbSchema
             // public static final String CORDER = "corder";
             public static final String FAVORITED = "favorited";
             public static final String TYPE = "type";
+            public static final String SIZE = "size";
+            public static final String ESPRESSO = "espresso";
+            public static final String CARAMEL = "caramel";
+            public static final String CHOCOLATE = "chocolate";
+            public static final String HAZELNUT = "hazelnut";
+            public static final String VANILLA = "vanilla";
+            public static final String WHIPPED = "whipped";
+            public static final String ALMONDMILK = "almondmilk";
+            public static final String INSTRUCTIONS = "instructions";
 
         }
     }
