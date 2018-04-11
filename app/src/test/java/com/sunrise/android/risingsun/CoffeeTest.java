@@ -66,4 +66,42 @@ public class CoffeeTest {
 
         assertEquals(expected, actual, 0);
     }
+
+    @Test
+    public void testToString()
+    {
+        Coffee testCoffee = new Coffee();
+        testCoffee.setSize(Coffee.LARGE);
+        testCoffee.setDrinkType(Coffee.CAPPUCCINO);
+        testCoffee.setWhippedCream(true);
+        testCoffee.setAlmondMilk(true);
+        testCoffee.setEspressoShots(4);
+        testCoffee.setHazelnutShots(2);
+        testCoffee.setVanillaShots(1);
+
+        String actual = testCoffee.toString();
+        String expected = "Large cappuccino, almond milk, 4 espresso, 1 vanilla, 2 hazelnut, whipped cream";
+
+        assertTrue("expected: " + expected + "; got: " + actual, actual.equals(expected));
+
+    }
+
+
+    /*
+        Things to make tests for:
+        -------------------------
+
+        order total
+        server communication
+        coffee made is the coffee wanted
+        coffee is placed in cart
+        cost calculated correctly
+        cost  displayed correctly
+        menu navigation correct
+        saved/removed from DB correctly
+        cart updates changes
+        
+     */
+
+
 }

@@ -168,7 +168,7 @@ public class Coffee
         }
 
         if (mAlmondMilk)
-            orderSummary += " almond milk";
+            orderSummary += ", almond milk";
         if (mEspressoShots > 0)
             orderSummary += ", " + mEspressoShots + " espresso";
         if (mVanillaShots > 0)
