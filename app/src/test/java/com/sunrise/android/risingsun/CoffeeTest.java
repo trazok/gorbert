@@ -119,11 +119,25 @@ public class CoffeeTest {
         assertEquals(expected, actual, 0);
     }
 
+    @Test
+    public void testServer()
+    {
+
+    }
+
+    @Test
+    public void testUpdateCart()
+    {
+        ShoppingCart testCart = ShoppingCart.getInstance();
+        Coffee testCoffee = new Coffee();
+
+        
+    }
+
     /*
         Things to make tests for:
         -------------------------
 
-        order total
         server communication
         coffee made is the coffee wanted
         coffee is placed in cart

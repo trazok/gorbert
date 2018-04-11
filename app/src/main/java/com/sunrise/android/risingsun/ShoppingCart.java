@@ -90,8 +90,5 @@ public class ShoppingCart
         return total;
     }
 
-    public void placeOrder()
-    {
 
-    }
 }
