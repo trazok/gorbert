@@ -46,6 +46,7 @@ public class CartListFragment extends Fragment
     private Button mOrderButton;
     private TextView mTotalCostView;
 
+
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
