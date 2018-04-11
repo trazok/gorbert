@@ -25,6 +25,7 @@ public class Coffee
     public static final int CHAI_LATTE = 6;
     public static final int AMERICANO = 7;
 
+
     protected int mSize;
     protected int mDrinkType;
     protected int mEspressoShots;
