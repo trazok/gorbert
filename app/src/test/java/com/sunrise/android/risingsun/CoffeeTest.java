@@ -87,6 +87,38 @@ public class CoffeeTest {
     }
 
 
+    @Test
+    public void testCartTotal()
+    {
+        ShoppingCart testCart = ShoppingCart.getInstance();
+
+        Coffee testCoffee0 = new Coffee();
+        testCoffee0.setSize(Coffee.SMALL);
+        testCoffee0.setDrinkType(Coffee.CHAI_LATTE);    //4.00
+        Coffee testCoffee1 = new Coffee();
+        testCoffee1.setSize(Coffee.LARGE);
+        testCoffee1.setDrinkType(Coffee.SULAWESI);      //2.25
+        Coffee testCoffee2 = new Coffee();
+        testCoffee2.setSize(Coffee.LARGE);
+        testCoffee2.setDrinkType(Coffee.HOT_CHOCOLATE); //2.50
+        Coffee testCoffee3 = new Coffee();
+        testCoffee3.setSize(Coffee.SMALL);
+        testCoffee3.setDrinkType(Coffee.LATTE);         //3.25
+        testCoffee3.setWhippedCream(true);              //.75
+
+
+
+        testCart.add(testCoffee0);
+        testCart.add(testCoffee1);
+        testCart.add(testCoffee2);
+        testCart.add(testCoffee3);
+
+        double expected = 12.75;
+        double actual = testCart.total();
+
+        assertEquals(expected, actual, 0);
+    }
+
     /*
         Things to make tests for:
         -------------------------
@@ -96,11 +128,12 @@ public class CoffeeTest {
         coffee made is the coffee wanted
         coffee is placed in cart
         cost calculated correctly
-        cost  displayed correctly
+        cost displayed correctly
         menu navigation correct
         saved/removed from DB correctly
         cart updates changes
-        
+
+
      */
 
 
