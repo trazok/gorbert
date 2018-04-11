@@ -131,7 +131,7 @@ public class CoffeeTest {
         ShoppingCart testCart = ShoppingCart.getInstance();
         Coffee testCoffee = new Coffee();
 
-        
+
     }
 
     /*
