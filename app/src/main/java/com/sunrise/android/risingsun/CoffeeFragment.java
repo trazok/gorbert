@@ -82,7 +82,7 @@ public class CoffeeFragment extends Fragment
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater)
     {
         super.onCreateOptionsMenu(menu, inflater);
-        inflater.inflate(R.menu.item_view_menu, menu);
+        inflater.inflate(R.menu.fragment_coffee_list, menu);
     }
 
     @Override
@@ -94,6 +94,16 @@ public class CoffeeFragment extends Fragment
                 Intent cart_intent = new Intent(getActivity(), ShoppingCartActivity.class);
                 startActivity(cart_intent);
                 return true;
+
+            case R.id.coffee_menu:
+                Intent menu_intent = new Intent(getActivity(), CoffeeListActivity.class);
+                startActivity(menu_intent);
+                return true;
+
+            case R.id.favorited_menu:
+            Intent favorite_intent = new Intent(getActivity(), FavoriteListActivity.class);
+            startActivity(favorite_intent);
+            return true;
 
             default:
                 return super.onOptionsItemSelected(item);
