@@ -131,6 +131,51 @@ public class CoffeeTest {
         ShoppingCart testCart = ShoppingCart.getInstance();
         Coffee testCoffee = new Coffee();
 
+        testCoffee.setDrinkType(Coffee.LATTE);  //3.75
+        testCoffee.setSize(Coffee.LARGE);
+        testCoffee.setWhippedCream(true);       //.75
+
+        testCart.add(testCoffee);
+        double expected = 4.50;
+        double actual = testCart.total();
+
+        assertEquals(expected, actual, 0);
+
+        testCoffee.setDrinkType(Coffee.HOT_CHOCOLATE);  //2.50
+        testCoffee.setWhippedCream(false);
+
+        testCart.updateCartItem(testCoffee);
+
+        expected = 2.50;
+        actual = testCart.total();
+
+        assertEquals(expected, actual, 0);
+
+    }
+
+    @Test
+    public void testCloneCoffee()
+    {
+        Coffee testCoffee = new Coffee();
+        testCoffee.setSize(Coffee.SMALL);
+        testCoffee.setDrinkType(Coffee.SULAWESI);
+        testCoffee.setVanillaShots(1);
+        testCoffee.setWhippedCream(true);
+        testCoffee.setEspressoShots(2);
+        testCoffee.setCaramelShots(3);
+        testCoffee.setChocolateShots(4);
+
+        Coffee cloneCoffee = testCoffee.cloneCoffee();
+
+//        assertEquals(testCoffee.cost(), cloneCoffee.cost(), 0);
+        assertEquals(testCoffee.getSize(), cloneCoffee.getSize(), 0);
+        assertEquals(testCoffee.getDrinkType(), cloneCoffee.getDrinkType(), 0);
+//        assertEquals(testCoffee.getVanillaShots(), cloneCoffee.getVanillaShots(), 0);
+//        assertEquals(testCoffee.getEspressoShots(), cloneCoffee.getEspressoShots(), 0);
+//        assertEquals(testCoffee.getCaramelShots(), cloneCoffee.getCaramelShots(), 0);
+//        assertEquals(testCoffee.getChocolateShots(), cloneCoffee.getChocolateShots(), 0);
+        assertTrue(testCoffee.getWhippedCream() == cloneCoffee.getWhippedCream());
+
 
     }
 
@@ -142,8 +187,6 @@ public class CoffeeTest {
         coffee made is the coffee wanted
         coffee is placed in cart
         cost calculated correctly
-        cost displayed correctly
-        menu navigation correct
         saved/removed from DB correctly
         cart updates changes
 

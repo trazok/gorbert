@@ -67,6 +67,15 @@ public class Coffee
         clone.setSize(mSize);
         clone.setTitle(mTitle);
         clone.setDescription(mDescription);
+        clone.setChocolateShots();
+        clone.setCaramelShots();
+        clone.setEspressoShots();
+        clone.setVanillaShots();
+        clone.setHazelnutShots();
+        clone.setWhippedCream();
+        clone.setAlmondMilk();
+        clone.setSpecialInstructions();
+        
 
         return clone;
     }
