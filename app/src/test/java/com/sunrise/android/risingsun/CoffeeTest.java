@@ -188,7 +188,6 @@ public class CoffeeTest {
         String actual = testCoffee.getDescription();
 
         assertTrue(actual.equals(expected));
-        
     }
 
     /*
