@@ -67,15 +67,15 @@ public class Coffee
         clone.setSize(mSize);
         clone.setTitle(mTitle);
         clone.setDescription(mDescription);
-        clone.setChocolateShots();
-        clone.setCaramelShots();
-        clone.setEspressoShots();
-        clone.setVanillaShots();
-        clone.setHazelnutShots();
-        clone.setWhippedCream();
-        clone.setAlmondMilk();
-        clone.setSpecialInstructions();
-        
+        clone.setChocolateShots(mChocolateShots);
+        clone.setCaramelShots(mCaramelShots);
+        clone.setEspressoShots(mEspressoShots);
+        clone.setVanillaShots(mVanillaShots);
+        clone.setHazelnutShots(mHazelnutShots);
+        clone.setWhippedCream(mWhippedCream);
+        clone.setAlmondMilk(mAlmondMilk);
+        clone.setSpecialInstructions(mSpecialInstructions);
+
 
         return clone;
     }
