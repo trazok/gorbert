@@ -167,16 +167,27 @@ public class CoffeeTest {
 
         Coffee cloneCoffee = testCoffee.cloneCoffee();
 
-//        assertEquals(testCoffee.cost(), cloneCoffee.cost(), 0);
+        assertEquals(testCoffee.cost(), cloneCoffee.cost(), 0);
         assertEquals(testCoffee.getSize(), cloneCoffee.getSize(), 0);
         assertEquals(testCoffee.getDrinkType(), cloneCoffee.getDrinkType(), 0);
-//        assertEquals(testCoffee.getVanillaShots(), cloneCoffee.getVanillaShots(), 0);
-//        assertEquals(testCoffee.getEspressoShots(), cloneCoffee.getEspressoShots(), 0);
-//        assertEquals(testCoffee.getCaramelShots(), cloneCoffee.getCaramelShots(), 0);
-//        assertEquals(testCoffee.getChocolateShots(), cloneCoffee.getChocolateShots(), 0);
+        assertEquals(testCoffee.getVanillaShots(), cloneCoffee.getVanillaShots(), 0);
+        assertEquals(testCoffee.getEspressoShots(), cloneCoffee.getEspressoShots(), 0);
+        assertEquals(testCoffee.getCaramelShots(), cloneCoffee.getCaramelShots(), 0);
+        assertEquals(testCoffee.getChocolateShots(), cloneCoffee.getChocolateShots(), 0);
         assertTrue(testCoffee.getWhippedCream() == cloneCoffee.getWhippedCream());
 
 
+    }
+
+    @Test
+    public void testDefaultCoffee()
+    {
+        Coffee testCoffee = new Coffee();
+
+        String expected = "Unknown Beverage";
+        String actual = testCoffee.getDescription();
+
+        assertTrue(actual.equals(expected));
     }
 
     /*
