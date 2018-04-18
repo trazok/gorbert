@@ -64,6 +64,7 @@ public class CartActivityLaunchTest {
             public void describeTo(Description description) {
                 description.appendText("Child at position " + position + " in parent ");
                 parentMatcher.describeTo(description);
+                
             }
 
             @Override
