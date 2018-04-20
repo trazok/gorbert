@@ -1,9 +1,14 @@
 package com.sunrise.android.risingsun;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.NavUtils;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -65,9 +70,44 @@ public class FavoriteFragment extends Fragment
     public void onCreate(@Nullable Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
         UUID coffeeId = (UUID) getArguments().getSerializable(ARG_COFFEE_ID);
 
         mCoffee = FavoriteList.get(getActivity()).getCoffee(coffeeId);
+    }
+
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater)
+    {
+        super.onCreateOptionsMenu(menu, inflater);
+        inflater.inflate(R.menu.fragment_coffee_list, menu);
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        switch (item.getItemId())
+        {
+            case R.id.cart_menu:
+                Intent cart_intent = new Intent(getActivity(), ShoppingCartActivity.class);
+                startActivity(cart_intent);
+                return true;
+
+            case R.id.coffee_menu:
+                Intent menu_intent = new Intent(getActivity(), CoffeeListActivity.class);
+                startActivity(menu_intent);
+                return true;
+
+            case R.id.favorited_menu:
+                Intent favorite_intent = new Intent(getActivity(), FavoriteListActivity.class);
+                startActivity(favorite_intent);
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+
+
     }
 
     @Override
@@ -129,6 +169,9 @@ public class FavoriteFragment extends Fragment
                 FavoriteList.get(getActivity()).remove(mCoffee.getId());
 
                 Toast.makeText(getActivity(), R.string.favorite_removed, Toast.LENGTH_SHORT).show();
+
+                Intent favorite_intent = new Intent(getActivity(), FavoriteListActivity.class);
+                startActivity(favorite_intent);
             }
         });
 

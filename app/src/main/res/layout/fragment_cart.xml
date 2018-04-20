@@ -236,6 +236,7 @@
         android:selectAllOnFocus="false"
         android:textColor="@android:color/darker_gray"
         android:textSize="14sp"
+        android:background="@layout/edittext_border_test"
         app:layout_constraintBottom_toTopOf="@+id/remove_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
