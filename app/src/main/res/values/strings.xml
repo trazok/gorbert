@@ -46,7 +46,7 @@
     <string name="latte_title_text">Latte</string>
     <string name="latte_description_text">A rich blend of steamed milk and espresso</string>
     <string name="hot_chocolate_title_text">Hot Chocolate</string>
-    <string name="hot_chocolate_description_text">Hot, creamy milk and lucious chocolate</string>
+    <string name="hot_chocolate_description_text">Hot, creamy milk and luscious chocolate</string>
 
 
     <string-array name="shot_count_list">
