@@ -17,7 +17,7 @@ The goal was simple and straightforward. A coffee shop had opened and wanted a w
 
 #### Methods
 
-In order to achieve these goals, 	the project was broken down into it’s minimal component pieces. The next step was to develop a rudimentary, but functional version of the product. This was accomplished using Android Studio[2], SQLite, and an attempt at the Agile framework. Each weekly stint attempted to add some functionality, test, troubleshoot, and have working and “deployable” each Wednesday. While this wasn’t always feasible, it was the underlying methodology throughout the semester. 
+In order to achieve these goals, the project was broken down into it’s minimal component pieces. The next step was to develop a rudimentary, but functional version of the product. This was accomplished using Android Studio, SQLite, and an attempt at the Agile framework. Each weekly stint attempted to add some functionality, test, troubleshoot, and have working and “deployable” each Wednesday. While this wasn’t always feasible, it was the underlying methodology throughout the semester. 
 
 #### Results
 
@@ -57,6 +57,9 @@ An ideal solution would be available quickly, easy to use, integrate with the PO
 
 
 # Design Development and Testing
+
+Throughout the development process, various tools and components were used; their individual use is detailed as they become relevant, but below is a consolidated list.
+
 - Eclipse
 - Android Studio
 - Espresso
