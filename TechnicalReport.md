@@ -10,7 +10,7 @@ CS 4800
 ### A Learning Experience
 
 
-## Abstract (200-300)
+## Abstract
 #### Objectives
 
 The goal was simple and straightforward. A coffee shop had opened and wanted a way for customers to order beverages remotely, without having to call in and place their orders, I sought to provide that functionality through an android application. The goal being that customers would be able to download the app from the Play store, create and customize their drink orders, and then submit them to the coffee shop. Customers would then be able to pick up and pay for their orders at the counter. Merchant transactions would be ideal, but are beyond the scope of the project, and would be implemented in the future. 
@@ -25,19 +25,19 @@ In short, the tangible result is a somewhat rudimentary but functional applicati
 
 #### Keywords 
 
-????
+coffee shop; coffee; order coffee; android; 
  
 
 # Table of contents
 
 - [Introduction and Overview](#introduction-and-project-overview)
-- Development
+- [Development](#design-development-and-testing)
 	- [Design](#design)
-	- Testing
-- Server
-- Results
-- Conclusions
-- References
+	- [Testing](#testing)
+	- [Server](#server)
+- [Result](#result)
+- [Conclusions](#conclusions-and-future-work)
+- [References](#references)
  
 
 # Introduction and Project Overview
@@ -60,7 +60,7 @@ This section should be written assuming your reader has zero knowledge of your w
 -	Summary of features
 
 
-# Design development and test (800-1200)
+# Design Development and Testing
 -	Design - describe system components (e.g. software modules/components, libraries, etc.), interfaces, and operations. Use figures to illustrate your description, for example: photos, block diagrams, class diagrams, state diagrams, flow charts, tables, etc.
 -	Development - describe how system was developed (for example, order of subsystem development and how risks were addressed early)
 -	Test - describe your test approach (what was tested, how tested, what was not tested). You should organize this by feature (as you did for the System Features assignment).
@@ -101,7 +101,7 @@ UI testing in Android Studio is normally accomplished with an additional framewo
 
 In order to test the ability to actually place an order, it was necessary to establish a dummy server and verify transmission of the order. This was done using a combination of Apache Tomcat, Java servlets, and Ngrok. Overall, it was a long and painful process that was the source of a lot of error, but eventually, it worked. Which was also my first experience with anything network related, and the line finally being logged to a text file on the server brought more joy than I care to admit.
 
-# Result (800-1200)
+# Result
 	
 The “final” product is a simple but workable application for a small coffee shop. The module does not currently interface with the existing POS system, as I was unable to acquire the API from the manufacturer; however, it does accurately transmit and log orders, allowing the potential for an employee to receive the orders and enter them manually into the system. In its current state, it allows a customer to select, customize, save, and order a coffee. It does not include payment services, but does inform the customer of the cost of their order prior to placing it, so as not to be surprised on arrival. 
 	By far the biggest problems encountered in the process were setting up the remote server, and creating UI tests. In theory adjusting the application to a concrete server should be a simple address substitution at this point. It could point to an established server and transmit the order via an HTTP post or use the included test server with a modified address, but in either case the brunt of the work should be taken care of. 
@@ -123,7 +123,8 @@ The “final” product is a simple but workable application for a small coffee 
 •	This section describes final system in terms of features completed and actual performance of the system under test.
 •	Include discussion of problems encountered, accuracy of estimates
 •	Use figures and diagrams whenever possible 
-Conclusion and future work (400-800)
+
+# Conclusion and Future Work
 As a result, I would consider the endeavor a success.
 •	Briefly summarize problem, approach and results
 •	Describe your conclusions and "lessons learned" regarding the results
@@ -133,5 +134,13 @@ As a result, I would consider the endeavor a success.
 I feel like the ice skater who is ok with letting go of the wall, but still super wobbly. Design patterns have trade-offs, don’t always use them. Spend more time thinking about and planning out product before diving in and coding. Write tests before-hand. Test everything you want the program to do. Then make it do those things. Hire a design professional. Learn espresso to avoid test recording. Try kotlin. 
 
 # References 
+
+Apache Tomcat
+Android Studio
+Eclipse
+Espresso
+Ngrok
+SQLite Browser
+
 
 
