@@ -202,7 +202,7 @@ public class CartListFragment extends Fragment
             mCoffee = coffee;
             mTitleTextView.setText(mCoffee.getTitle());
 
-            mDescriptionTextView.setText(mCoffee.getDescription());
+            mDescriptionTextView.setText(mCoffee.toString());
             mPriceTextView.setText(String.format("$%.2f", mCoffee.cost()));
         }
 
@@ -275,7 +275,7 @@ public class CartListFragment extends Fragment
             try
             {
 
-                url = new URL("http://7ab8c17c.ngrok.io/receive_order/order"); //dear god, dont forget the http.
+                url = new URL("http://944dbc48.ngrok.io/receive_order/order"); //dear god, dont forget the http.
             }
             catch (MalformedURLException e)
             {
