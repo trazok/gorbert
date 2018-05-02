@@ -124,7 +124,7 @@ The “final” product is a simple but workable application for a small coffee 
 •	Include discussion of problems encountered, accuracy of estimates
 •	Use figures and diagrams whenever possible 
 
-# Conclusion and Future Work
+# Conclusions and Future Work
 As a result, I would consider the endeavor a success.
 •	Briefly summarize problem, approach and results
 •	Describe your conclusions and "lessons learned" regarding the results
