@@ -25,7 +25,7 @@ In short, the tangible result is a somewhat rudimentary but functional applicati
 
 #### Keywords 
 
-coffee shop; coffee; order coffee; android; 
+coffee shop; coffee; order coffee; android; Sunrise Grill; House of the Rising Sun; Sunrise;
  
 
 # Table of contents
