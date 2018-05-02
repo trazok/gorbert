@@ -13,11 +13,11 @@ CS 4800
 ## Abstract
 #### Objectives
 
-The goal was simple and straightforward. A coffee shop had opened -- House of the Rising Sun -- and wanted a way for customers to order beverages remotely, without having to call in and place their orders, I sought to provide that functionality through an android application. The goal being that customers would be able to download the app from the Play store, create and customize their drink orders, and then submit them to the coffee shop. Customers would then be able to pick up and pay for their orders at the counter. Merchant transactions would be ideal, but are beyond the scope of the project, and would be implemented in the future. 
+The goal was simple and straightforward. A coffee shop had opened and wanted a way for customers to order beverages remotely, without having to call in and place their orders, I sought to provide that functionality through an android application. The goal being that customers would be able to download the app from the Play store, create and customize their drink orders, and then submit them to the coffee shop. Customers would then be able to pick up and pay for their orders at the counter. Merchant transactions would be ideal, but are beyond the scope of the project, and would be implemented in the future. 
 
 #### Methods
 
-In order to achieve these goals, 	the project was broken down into it’s minimal component pieces. The next step was to develop a rudimentary, but functional version of the product. This was accomplished using Android Studio, SQLite, and an attempt at the Agile framework. Each weekly stint attempted to add some functionality, test, troubleshoot, and have working and “deployable” by Wednesday. While this wasn’t always feasible, it was the underlying methodology throughout the semester. 
+In order to achieve these goals, 	the project was broken down into it’s minimal component pieces. The next step was to develop a rudimentary, but functional version of the product. This was accomplished using Android Studio[2], SQLite, and an attempt at the Agile framework. Each weekly stint attempted to add some functionality, test, troubleshoot, and have working and “deployable” each Wednesday. While this wasn’t always feasible, it was the underlying methodology throughout the semester. 
 
 #### Results
 
@@ -42,22 +42,18 @@ coffee shop; coffee; order coffee; android; Sunrise Grill; House of the Rising S
 
 # Introduction and Project Overview
 
-After a local business expanded into a coffee bar, the business owners wanted a mobile application to facilitate ordering coffee remotely. The idea was that development of such an application would increase revenue by drawing in customers who were interested in coffee to-go and balance barista workloads by reducing spikes in in-person ordering. This would cut costs by allowing staff to be more productive with fewer employees at any given time.  
-	An ideal solution would be available quickly, easy to use, integrate with the POS system in place, and be open for extension/modification in the future. On the user’s end, the application should be:
--	Intuitive
--	Provide access to the coffee menu
--	Allow customization of menu items
--	Enable customized items to be saved as favorites
--	Provide a means to place an order to the coffee shop
+After a local business (Sunrise Grill )expanded into a coffee bar (House of the Rising Sun), the business owners wanted a mobile application to facilitate ordering coffee remotely. The idea was that development of such an application would increase revenue by drawing in customers who were interested in coffee to-go and balance barista workloads by reducing spikes in in-person ordering. This would cut costs by allowing staff to be more productive with fewer employees at any given time.  
+	
+An ideal solution would be available quickly, easy to use, integrate with the POS system in place, and be open for extension/modification in the future. On the user’s end, the application should be:
+
+- Intuitive
+- Provide access to the coffee menu
+- Allow customization of menu items
+- Enable customized items to be saved as favorites
+- Provide a means to place an order to the coffee shop
 
 
-This section should be written assuming your reader has zero knowledge of your work and its background. You must bring the reader from "zero" to a level where they can understand the main ideas and results of your work. (This should be derived primarily from your Final Project Description document)
--	Introduces the problem, objectives, and the users (or customers) of project results, context of problem and issues that affect solution choices
--	Describes relevant background information. May include any alternative solutions (are there existing solutions or similar systems? give references) in terms of strengths and weaknesses.
--	Describe value or benefits of your solution and results
--	Problem scope--problems addressed and not addressed
--	Figures and system diagrams where possible to illustrate problems and solutions.
--	Summary of features
+
 
 
 # Design Development and Testing
@@ -90,7 +86,7 @@ Other similar apps and services were reviewed and, although many had more robust
 	
 Testing was unknown territory at the outset of the project. Tests were mystical things that had been run in the past to verify a program’s correctness, but there had never been an attempt to create them. And they were always used as an after-thought, a final assessment, and not a key component of the development process to be used formatively to inform and motivate feature implementation. Testing throughout the process was done manually, and wasn’t automated until almost the end of development. Originally the prospect of writing tests was unfamiliar and daunting – how does one automatically test what exists, let alone testing what doesn’t exist yet. As development progressed, it just never seemed to be the right time to write tests; something was always already known to be broken and needed fixing, so time should be spend fixing intead of writing tests. So tests were put off and pushed back and back-burnered and procrastinated until they were all that was left. Not ideal.
 
-Testing the databases was also tricky, as in newer android APIs, the databases are inaccessible. In order to access the contents and verify them, I had to create a virtual device running on an older API (22 was sufficient). Then, using the built-in android device monitor, save the database to my computer. Once the database was on my computer, I could open and browse it using SQL Browser. Each new iteration of the database then required deleting and reinstalling the app, and repeating the save/browse process to investigate database contents.
+Testing the databases was also tricky, as in newer android APIs, the databases are inaccessible. In order to access the contents and verify them, I had to create a virtual device running on an older API (22 was sufficient). Then, using the built-in android device monitor, save the database to my computer. Once the database was on my computer, I could open and browse it using SQL Browser. Each new iteration of the database then required deleting and reinstalling the app, and repeating the save/browse process to investigate database contents [6].
 
 ### Unit Testing
 
@@ -123,11 +119,6 @@ By far the biggest problems encountered in the process were setting up the remot
 
 
 
-•		Actual results of project. Describe how well you met your objectives, feature by feature. A table of results will help to summarize this.
-•	This section describes final system in terms of features completed and actual performance of the system under test.
-•	Include discussion of problems encountered, accuracy of estimates
-•	Use figures and diagrams whenever possible 
-
 # Conclusions and Future Work
 
 On the whole, I would consider the endeavor a success. In regards to both testing and Android development, I feel like the ice skater who is ok with letting go of the wall, but still super wobbly. It is definitely important to spend more time mapping out and planning the product, before diving straight into coding. 
@@ -140,12 +131,12 @@ On the whole, I would consider the endeavor a success. In regards to both testin
 
 # References 
 
-Apache Tomcat
-Android Studio
-Eclipse
-Espresso
-Ngrok
-SQLite Browser
+[1] [Apache Tomcat](#http://tomcat.apache.org/)
+[2] [Android Studio](#https://developer.android.com/studio/)
+[3] [Eclipse](#https://www.eclipse.org/)
+[4] [Espresso](#https://developer.android.com/training/testing/espresso/basics)
+[5] [Ngrok](#https://ngrok.com/)
+[6] [SQLite Browser](#http://sqlitebrowser.org/)
 
 
 
