@@ -134,17 +134,17 @@ On the whole, I would consider the endeavor a success. In regards to both testin
 
 # References 
 
-[1] [Apache Tomcat](#http://tomcat.apache.org/)
+[1] [Apache Tomcat](http://tomcat.apache.org/)
 
-[2] [Android Studio](#https://developer.android.com/studio/)
+[2] [Android Studio](https://developer.android.com/studio/)
 
-[3] [Eclipse](#https://www.eclipse.org/)
+[3] [Eclipse](https://www.eclipse.org/)
 
-[4] [Espresso](#https://developer.android.com/training/testing/espresso/basics)
+[4] [Espresso](https://developer.android.com/training/testing/espresso/basics)
 
-[5] [Ngrok](#https://ngrok.com/)
+[5] [Ngrok](https://ngrok.com/)
 
-[6] [SQLite Browser](#http://sqlitebrowser.org/)
+[6] [SQLite Browser](http://sqlitebrowser.org/)
 
 
 
