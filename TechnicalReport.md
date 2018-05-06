@@ -42,7 +42,7 @@ coffee shop; coffee; order coffee; android; Sunrise Grill; House of the Rising S
 
 # Introduction and Project Overview
 
-After a local business (Sunrise Grill )expanded into a coffee bar (House of the Rising Sun), the business owners wanted a mobile application to facilitate ordering coffee remotely. The idea was that development of such an application would increase revenue by drawing in customers who were interested in coffee to-go and balance barista workloads by reducing spikes in in-person ordering. This would cut costs by allowing staff to be more productive with fewer employees at any given time.  
+After a local business (Sunrise Grill [7])expanded into a coffee bar (House of the Rising Sun), the business owners wanted a mobile application to facilitate ordering coffee remotely. The idea was that development of such an application would increase revenue by drawing in customers who were interested in coffee to-go and balance barista workloads by reducing spikes in in-person ordering. This would cut costs by allowing staff to be more productive with fewer employees at any given time.  
 	
 An ideal solution would be available quickly, easy to use, integrate with the POS system in place, and be open for extension/modification in the future. On the user’s end, the application should be:
 
@@ -60,14 +60,14 @@ An ideal solution would be available quickly, easy to use, integrate with the PO
 
 Throughout the development process, various tools and components were used; their individual use is detailed as they become relevant, but below is a consolidated list.
 
-- Eclipse
-- Android Studio
-- Espresso
-- Apache Tomcat
-- Ngrok
+- Eclipse [3]
+- Android Studio [2]
+- Espresso [4]
+- Apache Tomcat [1]
+- Ngrok [5]
 - Nexus 6 emulator (API 22)
 - Galaxy S7 (API 24)
-- SQLite Browser
+- SQLite Browser [6]
 
 ## Design
 ### Program Design
