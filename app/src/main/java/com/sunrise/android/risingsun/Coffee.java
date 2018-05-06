@@ -190,7 +190,8 @@ public class Coffee
             orderSummary += ", " + mCaramelShots + " caramel";
         if (mWhippedCream)
             orderSummary += ", whipped cream";
-
+        if (mSpecialInstructions != null)
+            orderSummary += " (" + mSpecialInstructions + ")";
 
         return orderSummary;
     }
